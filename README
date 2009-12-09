@@ -1,0 +1,1 @@
+Current plan: each *.sxml file provides a 'page' of SXML, which render-html.ss dumps into a template.

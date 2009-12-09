@@ -64,7 +64,7 @@ programming and aspect-oriented programming." ))
 garbage collection and to explore, both experimentally and
 theoretically, the behavior of garbage collection algorithms.  This
 work is supported by a Sun Collaborative Research grant and by the"
-             (a (@ (href "http://www.nsf.gov"))
+             (a ((href "http://www.nsf.gov"))
                 National Science Foundation)
              "under grant CCR-0208722.") ))
 
@@ -81,11 +81,10 @@ update introduction.  We seek to extend this work to context- and
 flow-dependent analyses, and to languages in which procedures may be
 invoked implicitly via events, callbacks, or aspects.  This work is
 supported by the "
-             (a (@ (href "http://www.nsf.gov"))
-                "National Science Foundation")
+             (a ((href "http://www.nsf.gov")) "National Science Foundation")
              "under grant CCR-0097740. ("
-             (a (@ (href "http://www.ccs.neu.edu/home/wand/semantics/analysis-papers.html"))
-                "Recent Papers") 
+             (a ((href "http://www.ccs.neu.edu/home/wand/semantics/analysis-papers.html")) 
+                "Recent papers") 
              ")") ))
 
 (project "Semantics of Programming Languages"
@@ -107,5 +106,5 @@ integrate logic into all aspects of the computer science curriculum so
 that students understand how logic helps with the most fundamental
 task of our science, programming and system design. This is joint work
 with Moshe Vardi at Rice and Phoikon Kolaitis at UCSC and is supported
-by the" (a (@ (href "http://www.nsf.gov")) "National Science Foundation") ".")
+by the" (a ((href "http://www.nsf.gov")) "National Science Foundation") ".")
          ))
