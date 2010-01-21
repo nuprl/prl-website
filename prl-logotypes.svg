@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
+
 <svg
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
@@ -12,9 +13,10 @@
    height="1052.3622047"
    id="svg2"
    sodipodi:version="0.32"
-   inkscape:version="0.46"
+   inkscape:version="0.47pre4 r22446"
    sodipodi:docname="prl-logotypes.svg"
-   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   version="1.1">
   <defs
      id="defs4">
     <inkscape:perspective
@@ -24,6 +26,13 @@
        inkscape:vp_z="744.09448 : 526.18109 : 1"
        inkscape:persp3d-origin="372.04724 : 350.78739 : 1"
        id="perspective10" />
+    <inkscape:perspective
+       id="perspective7172"
+       inkscape:persp3d-origin="0.5 : 0.33333333 : 1"
+       inkscape:vp_z="1 : 0.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 0.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
   </defs>
   <sodipodi:namedview
      id="base"
@@ -35,16 +44,17 @@
      objecttolerance="10"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="471.4308"
-     inkscape:cy="536.46275"
+     inkscape:zoom="1.4"
+     inkscape:cx="341.4308"
+     inkscape:cy="268.00075"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1280"
-     inkscape:window-height="974"
+     inkscape:window-height="848"
      inkscape:window-x="0"
-     inkscape:window-y="25" />
+     inkscape:window-y="25"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -53,6 +63,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -147,38 +158,75 @@
        style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Ouhod;-inkscape-font-specification:Ouhod Bold"
        d="M 591.84365,787.63627 L 591.84365,874.59627 L 642.08365,874.59627 L 642.08365,892.67627 L 570.24365,892.67627 L 570.24365,787.63627 L 591.84365,787.63627"
        id="path3430"
-       inkscape:export-filename="/home/pauls/prl.png"
-       inkscape:export-xdpi="70"
-       inkscape:export-ydpi="70" />
+       inkscape:export-filename="/home/paul/Desktop/prl.png"
+       inkscape:export-xdpi="299.85339"
+       inkscape:export-ydpi="299.85339" />
     <path
        style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Ouhod;-inkscape-font-specification:Ouhod Bold"
        d="M 542.18923,763.6481 L 542.18923,868.67935 L 563.78298,868.67935 L 563.78298,826.99185 L 588.59548,826.99185 C 593.23542,826.99189 596.57792,827.99646 598.65798,830.0231 C 600.79125,831.99647 601.87667,835.18108 601.87673,839.55435 C 601.87666,840.83438 601.83625,842.30729 601.78298,843.9606 C 601.72958,845.56062 601.68915,847.75894 601.68923,850.5856 C 601.68916,855.54561 601.91875,859.20772 602.34548,861.55435 C 602.77208,863.84769 603.63707,866.22599 604.97048,868.67935 L 628.18923,868.67935 L 628.18923,864.8356 C 626.48247,863.8756 625.28873,862.78105 624.59548,861.55435 C 623.95539,860.27436 623.62664,858.50395 623.62673,856.2106 C 623.51997,851.78395 623.42996,848.32022 623.37673,845.86685 C 623.32331,843.36021 623.17457,840.73396 622.90798,837.9606 C 622.69456,835.1873 622.46497,833.1873 622.25173,831.9606 C 622.09164,830.68064 621.70414,829.24815 621.06423,827.6481 C 620.47748,826.04814 619.90997,824.95354 619.37673,824.36685 C 618.84331,823.72689 617.98747,822.9298 616.81423,822.0231 C 615.64082,821.11648 614.53708,820.44065 613.47048,819.9606 C 612.40374,819.48065 610.89039,818.81398 608.97048,817.9606 C 620.75706,813.42732 626.65789,804.76982 626.65798,792.0231 C 626.65789,789.46318 626.41914,786.98567 625.93923,784.5856 C 625.45914,782.13235 624.55372,779.6457 623.22048,777.0856 C 621.88706,774.47236 620.21582,772.19319 618.18923,770.2731 C 616.16248,768.29986 613.44624,766.71863 610.03298,765.49185 C 606.61957,764.26529 602.7279,763.64821 598.40798,763.6481 L 542.18923,763.6481 z M 563.78298,781.7106 L 589.78298,781.7106 C 592.34292,781.71068 594.44208,781.89069 596.09548,782.2106 C 597.74875,782.53068 599.32082,783.11651 600.81423,784.0231 C 602.3075,784.92985 603.40207,786.34402 604.09548,788.2106 C 604.78874,790.02401 605.12665,792.3215 605.12673,795.1481 C 605.12666,798.0815 604.77959,800.50944 604.03298,802.42935 C 603.33958,804.34941 602.24501,805.78193 600.75173,806.74185 C 599.31167,807.64858 597.73959,808.26565 596.03298,808.5856 C 594.37959,808.90566 592.28959,809.08567 589.78298,809.0856 L 563.78298,809.0856 L 563.78298,781.7106 z"
        id="path3432"
-       inkscape:export-filename="/home/pauls/prl.png"
-       inkscape:export-xdpi="70"
-       inkscape:export-ydpi="70" />
+       inkscape:export-filename="/home/paul/Desktop/prl.png"
+       inkscape:export-xdpi="299.85339"
+       inkscape:export-ydpi="299.85339" />
     <path
        style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Ouhod;-inkscape-font-specification:Ouhod Bold"
        d="M 513.72048,739.6481 L 513.72048,844.67935 L 535.31423,844.67935 L 535.31423,807.24185 L 562.28298,807.24185 C 571.88291,807.24189 579.55416,804.0977 585.31423,797.80435 C 591.07415,791.45773 593.9704,782.93983 593.97048,772.2731 C 593.97039,761.71318 591.03372,753.62318 585.22048,748.0231 C 579.40707,742.4232 571.01958,739.64821 560.03298,739.6481 L 513.72048,739.6481 z M 535.31423,757.7106 L 555.47048,757.7106 C 561.23043,757.71068 565.46916,758.99443 568.18923,761.55435 C 570.90917,764.11443 572.28292,768.11442 572.28298,773.55435 C 572.28291,778.88775 570.90916,782.83816 568.18923,785.3981 C 565.46917,787.90482 561.23042,789.14814 555.47048,789.1481 L 535.31423,789.1481 L 535.31423,757.7106 z"
        id="path3434"
-       inkscape:export-filename="/home/pauls/prl.png"
-       inkscape:export-xdpi="70"
-       inkscape:export-ydpi="70" />
+       inkscape:export-filename="/home/paul/Desktop/prl.png"
+       inkscape:export-xdpi="299.85339"
+       inkscape:export-ydpi="299.85339" />
     <path
        style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Ouhod;-inkscape-font-specification:Ouhod Bold"
        d="M 563.78744,809.07667 L 542.19369,810.10792 L 542.19369,782.92042 L 563.78744,782.92042 L 563.78744,809.07667 z"
        id="path3436"
        sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="/home/pauls/prl.png"
-       inkscape:export-xdpi="70"
-       inkscape:export-ydpi="70" />
+       inkscape:export-filename="/home/paul/Desktop/prl.png"
+       inkscape:export-xdpi="299.85339"
+       inkscape:export-ydpi="299.85339" />
     <path
        sodipodi:nodetypes="cccc"
        id="path3438"
        d="M 563.78744,809.07667 L 563.78744,782.92042 M 542.19369,782.92042 L 542.19369,810.10792"
        style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Ouhod;-inkscape-font-specification:Ouhod Bold"
-       inkscape:export-filename="/home/pauls/prl.png"
-       inkscape:export-xdpi="70"
-       inkscape:export-ydpi="70" />
+       inkscape:export-filename="/home/paul/Desktop/prl.png"
+       inkscape:export-xdpi="299.85339"
+       inkscape:export-ydpi="299.85339" />
+    <path
+       inkscape:export-ydpi="299.85339"
+       inkscape:export-xdpi="299.85339"
+       inkscape:export-filename="/home/paul/Desktop/prl.png"
+       id="path7178"
+       d="m 364.70079,841.2077 0,86.96 50.24,0 0,18.08 -71.84,0 0,-105.04 21.6,0"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.7;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Ouhod;-inkscape-font-specification:Ouhod Bold;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       inkscape:export-ydpi="299.85339"
+       inkscape:export-xdpi="299.85339"
+       inkscape:export-filename="/home/paul/Desktop/prl.png"
+       id="path7180"
+       d="m 315.04637,817.21953 0,105.03125 21.59375,0 0,-41.6875 24.8125,0 c 4.63994,4e-5 7.98244,1.00461 10.0625,3.03125 2.13327,1.97337 3.21869,5.15798 3.21875,9.53125 -7e-5,1.28003 -0.0405,2.75294 -0.0937,4.40625 -0.0534,1.60002 -0.0938,3.79834 -0.0937,6.625 -7e-5,4.96001 0.22952,8.62212 0.65625,10.96875 0.4266,2.29334 1.29159,4.67164 2.625,7.125 l 23.21875,0 0,-3.84375 c -1.70676,-0.96 -2.9005,-2.05455 -3.59375,-3.28125 -0.64009,-1.27999 -0.96884,-3.0504 -0.96875,-5.34375 -0.10676,-4.42665 -0.19677,-7.89038 -0.25,-10.34375 -0.0534,-2.50664 -0.20216,-5.13289 -0.46875,-7.90625 -0.21342,-2.7733 -0.44301,-4.7733 -0.65625,-6 -0.16009,-1.27996 -0.54759,-2.71245 -1.1875,-4.3125 -0.58675,-1.59996 -1.15426,-2.69456 -1.6875,-3.28125 -0.53342,-0.63996 -1.38926,-1.43705 -2.5625,-2.34375 -1.17341,-0.90662 -2.27715,-1.58245 -3.34375,-2.0625 -1.06674,-0.47995 -2.58009,-1.14662 -4.5,-2 11.78658,-4.53328 17.68741,-13.19078 17.6875,-25.9375 -9e-5,-2.55992 -0.23884,-5.03743 -0.71875,-7.4375 -0.48009,-2.45325 -1.38551,-4.9399 -2.71875,-7.5 -1.33342,-2.61324 -3.00466,-4.89241 -5.03125,-6.8125 -2.02675,-1.97324 -4.74299,-3.55447 -8.15625,-4.78125 -3.41341,-1.22656 -7.30508,-1.84364 -11.625,-1.84375 l -56.21875,0 z m 21.59375,18.0625 26,0 c 2.55994,8e-5 4.6591,0.18009 6.3125,0.5 1.65327,0.32008 3.22534,0.90591 4.71875,1.8125 1.49327,0.90675 2.58784,2.32092 3.28125,4.1875 0.69326,1.81341 1.03117,4.1109 1.03125,6.9375 -7e-5,2.9334 -0.34714,5.36134 -1.09375,7.28125 -0.6934,1.92006 -1.78797,3.35258 -3.28125,4.3125 -1.44006,0.90673 -3.01214,1.5238 -4.71875,1.84375 -1.65339,0.32006 -3.74339,0.50007 -6.25,0.5 l -26,0 0,-27.375 z"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.7;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Ouhod;-inkscape-font-specification:Ouhod Bold;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       inkscape:export-ydpi="299.85339"
+       inkscape:export-xdpi="299.85339"
+       inkscape:export-filename="/home/paul/Desktop/prl.png"
+       id="path7182"
+       d="m 286.57762,793.21953 0,105.03125 21.59375,0 0,-37.4375 26.96875,0 c 9.59993,4e-5 17.27118,-3.14415 23.03125,-9.4375 5.75992,-6.34662 8.65617,-14.86452 8.65625,-25.53125 -9e-5,-10.55992 -2.93676,-18.64992 -8.75,-24.25 -5.81341,-5.5999 -14.2009,-8.37489 -25.1875,-8.375 l -46.3125,0 z m 21.59375,18.0625 20.15625,0 c 5.75995,8e-5 9.99868,1.28383 12.71875,3.84375 2.71994,2.56008 4.09369,6.56007 4.09375,12 -7e-5,5.3334 -1.37382,9.28381 -4.09375,11.84375 -2.72006,2.50672 -6.95881,3.75004 -12.71875,3.75 l -20.15625,0 0,-31.4375 z"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.7;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Ouhod;-inkscape-font-specification:Ouhod Bold;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       inkscape:export-ydpi="299.85339"
+       inkscape:export-xdpi="299.85339"
+       inkscape:export-filename="/home/paul/Desktop/prl.png"
+       sodipodi:nodetypes="ccccc"
+       id="path7184"
+       d="m 336.64458,862.6481 -21.59375,1.03125 0,-27.1875 21.59375,0 0,26.15625 z"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Ouhod;-inkscape-font-specification:Ouhod Bold;stroke-width:1.7;stroke-miterlimit:4;stroke-dasharray:none" />
+    <path
+       inkscape:export-ydpi="299.85339"
+       inkscape:export-xdpi="299.85339"
+       inkscape:export-filename="/home/paul/Desktop/prl.png"
+       style="font-size:144px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1.7;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;font-family:Ouhod;-inkscape-font-specification:Ouhod Bold;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 336.64458,862.6481 0,-26.15625 m -21.59375,0 0,27.1875"
+       id="path7186"
+       sodipodi:nodetypes="cccc" />
   </g>
 </svg>
