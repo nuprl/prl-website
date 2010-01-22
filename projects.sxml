@@ -10,15 +10,12 @@
      (syntax-case syn (homepage faculty description)
        [(_ proj-name (_ url) (_ fac ...) (_ desc ...))
         #` `(div
-             (dt (h3  (a ((href url)) proj-name)
-                      " (" ,(string-join (list fac ...) ", ") ")"))
-             (dd desc ...))])))
-
-                                 
+             (h2  (a ((href url)) proj-name)
+                  " (" ,(string-join (list fac ...) ", ") ")")
+             desc ...)])))
 
  (define page
    `(div
-     (h2 "Projects")
      ,(project "PLT Scheme"
                (homepage "http://www.plt-scheme.org/")
                (faculty "Felleisen")
