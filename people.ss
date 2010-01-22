@@ -1,93 +1,9 @@
-;; -*- scheme -*-
 (module people scheme
- (provide page)
+ (provide people)
 
- ;returns a list (possibly 0) sxml elements, ready for splicing in
- (define (lookup sym assoc fn [otherwise '()])
-   (cond [(assq sym assoc) => (lambda (arg) (list " " (fn (cadr arg))))]
-         [else otherwise]))
-
- #;(define-syntax people-list
-   (lambda (syn)
-     (syntax-case syn (group person)
-       [(_ group-name (person name fields ...)  ...)
-        #` `(div (h2 ,group-name)
-               (ul (li
-                    (span ((class "person-name")) name)
-                    ,@(let ((lookup (make-lookup (syntax->datum (syntax fields ...)))))
-                        (list 
-                         (cond [(lookup 'homepage) => (lambda (url)
-                                                        #`(a ((href ,url) ,name)))]
-                               [else (synax name)])
-                         ))) ... ))])))
-
-   (define (people-list people)
-     (match people
-       [(list 
-         (list 'group group-name
-                 (list 'person person-name assoc ...) ...) ...)
-        `(div
-          ,@(map 
-             (lambda (group-name person-name assoc) 
-               (if (null? person-name)
-                   '(div)
-                   `(div (h2 ,group-name)
-                         (ul
-                          ,@(map 
-                             (lambda (person-name assoc)
-                               `(li 
-                                 ,@(lookup 
-                                    'homepage assoc
-                                    (lambda (url) `(a ((href ,url)) ,person-name))
-                                    `(,person-name))
-                                 ,@(lookup 
-                                    'graduated assoc
-                                    (lambda (year) (string-append "(" (number->string year) ")")))
-                                 ,@(lookup 
-                                    'thesis assoc 
-                                    (lambda (url) `(a ((href ,url)) "(dissertation)")))))
-                             person-name assoc)
-                          ))))
-             group-name person-name assoc))]))
-                              
-;                    (span "(graduated " year ")")
-;                    (a ((href thesis-url)) "(dissertation)") ...
-;                    (a ((href home-url)) "(homepage)") ... ) ...))])))
-                   
-
-#; (define (read-people groups)
-   `(div
-     ,@(map (lambda (group)
-              (match group
-                     [(_ Group-Name)
-                      `(div)]         ; empty groups don't get listed.
-                     [(_ Group-Name (person Person-Name Fields ...) ...)
-                      `(div 
-                        (h2 ,Group-Name)
-                        (ul ,@(map (lambda (person fields)
-                                     (let ((lookup (make-lookup fields)))
-                                       `(li 
-                                         ,(cond [(lookup 'homepage)
-                                                 => (lambda (url)
-                                                      (link url person))]
-                                                [else person])
-                                         ,@(cond [(lookup 'graduated)
-                                                  => parens]
-                                                 [else null])
-                                         ,@(cond [(lookup 'thesis)
-                                                  => (lambda (url)
-                                                       (parens (link url "dissertation")))]
-                                                 [else null])
-                                         )))
-                                   Person-Name Fields)))]))
-            groups)))
-
-
-
- (define page (people-list
+ (define people
    '(
-    ;; The bio field shoule be an Xexpr, a way of representing XML in
-    ;; sexps.  
+     ;; The bio field shoule be an Xexpr.
      (group "Faculty"
             (person "William D. Clinger"
                     (picture "clinger-western2_squarecrop.jpg")
@@ -112,9 +28,9 @@ Boston to create PRL with Will, Mitch, and Karl."  ))
 and he likes mountains, lakes and yoga. He likes shy programming, be
 it structure-shy, concern-shy, or module-shy."
                          ))
-                                        ;       (person "David Lorenz"
-                                        ;               (picture "lorenz_prl.jpg")
-                                        ;               (homepage "http://www.ccs.neu.edu/home/lorenz"))
+;       (person "David Lorenz"
+;               (picture "lorenz_prl.jpg")
+;               (homepage "http://www.ccs.neu.edu/home/lorenz"))
             (person "Panagiotis (Pete) Manolios"
                     (picture "Pete_Manolios.jpeg")
                     (homepage "http://www.cc.gatech.edu/~manolios/")
@@ -159,48 +75,48 @@ it structure-shy, concern-shy, or module-shy."
                          "
                          )))
 
-    (group "Research Scientists"
-           (person "Eli Barzilay"
-                   (picture "Eli_Barzilay.jpg")
-                   (homepage "http://www.barzilay.org/")
-                   (bio "
+     (group "Research Scientists"
+            (person "Eli Barzilay"
+                    (picture "Eli_Barzilay.jpg")
+                    (homepage "http://www.barzilay.org/")
+                    (bio "
                          He is Israeli by nature, a member of PLT by association.
                          Eli maintains a major part of PLT's infrastructure,
                          conducts research on language prototyping, and occasionally
                          teaches a course for the College.
                          "
-                        ))
+                         ))
 
-           #;(person "Paul Steckler"
-           (picture "steckler.jpg")
-           (homepage "http://www.ccs.neu.edu/home/steck/"))
-           )
+            #;(person "Paul Steckler"
+            (picture "steckler.jpg")
+            (homepage "http://www.ccs.neu.edu/home/steck/"))
+            )
 
-    (group "Visitors"
-           )
+     (group "Visitors"
+            )
 
-    (group "Students"
-           #;(person "Ahmed Abdelmohsen"
-           (picture "ugly_me.jpg")
-           (bio (blink "I couldn't be bothered to submit "
-           "a picture and self-description.")))
-           #;(person "J. Daniel Brown"
-           (picture "ugly_me.jpg")
-           (bio (blink "I couldn't be bothered to submit "
-           "a picture and self-description.")))
-           (person "Bryan D. Chadwick"
-                   (picture "Bryan_Chadwick.jpg")
-                   (homepage "http://www.ccs.neu.edu/home/chadwick/")
-                   (bio " I received my Masters from Northeastern in
+     (group "Students"
+            #;(person "Ahmed Abdelmohsen"
+            (picture "ugly_me.jpg")
+            (bio (blink "I couldn't be bothered to submit "
+            "a picture and self-description.")))
+            #;(person "J. Daniel Brown"
+            (picture "ugly_me.jpg")
+            (bio (blink "I couldn't be bothered to submit "
+            "a picture and self-description.")))
+            (person "Bryan D. Chadwick"
+                    (picture "Bryan_Chadwick.jpg")
+                    (homepage "http://www.ccs.neu.edu/home/chadwick/")
+                    (bio " I received my Masters from Northeastern in
 2005 and continued on, joining PRL later that year under Karl
 Lieberherr.  I'm interested in most things PL, but am currently
 looking at merging various ideas from functional programming with
 those of Object Oriented data structure traversals.
                          "
-                        ))
-           (person "Benjamin J. Chambers"
-                   (picture "Ben_Chambers.jpg")
-                   (bio " I am a first-year PhD student interested
+                         ))
+            (person "Benjamin J. Chambers"
+                    (picture "Ben_Chambers.jpg")
+                    (bio " I am a first-year PhD student interested
 especially in functional languages and program analyses, but at this
 point I'm pretty much open to anything in PL.  I did my undergraduate
 at Georgia Tech, where I discovered my interest in PL after taking a
@@ -208,11 +124,11 @@ course in compilers.  In my free time I enjoy reading books and am
 trying to learn to play Jazz piano (although I'm afraid I don't
 actually have enough free time to do that).
                          "
-                        ))
-           (person "Richard C. Cobbe"
-                   (picture "cobbe.jpg")
-                   (homepage "http://www.ccs.neu.edu/home/cobbe")
-                   (bio " I'm a sixth-year PhD student working with
+                         ))
+            (person "Richard C. Cobbe"
+                    (picture "cobbe.jpg")
+                    (homepage "http://www.ccs.neu.edu/home/cobbe")
+                    (bio " I'm a sixth-year PhD student working with
 Matthias Felleisen, and I hope to defend my thesis at the end of
 summer 2008.  My thesis research involves proposing changes to Java
 that remove the need for its \"null\" value by providing safer
@@ -222,19 +138,19 @@ uninitialized, and as a rough encoding of the ML OPTION type.  I
 intend to address these uses by proposing a new object initialization
 mechanism that removes the need for uninitialized values and by adding
 a safer two-way disjoint union to the language."
-                        ))
-           (person "Ryan Culpepper"
-                   (picture "Ryan_Culpepper.jpg")
-                   (homepage "http://www.ccs.neu.edu/home/ryanc/")
-                   (bio " Born in Houston, TX, left, went back to go
+                         ))
+            (person "Ryan Culpepper"
+                    (picture "Ryan_Culpepper.jpg")
+                    (homepage "http://www.ccs.neu.edu/home/ryanc/")
+                    (bio " Born in Houston, TX, left, went back to go
 to Rice University.  Interested in PL and compilers. I read during the
 summer and play table tennis during the winter. I'm still looking for
 someone up here who has heard of disc golf."
-                        ))
-           (person "Peter Dillinger"
-                   (picture "Peter_Dillinger.jpg")
-                   (homepage "http://www.peterd.org/")
-                   (bio " B.S., M.S., and doctoral work in Computer
+                         ))
+            (person "Peter Dillinger"
+                    (picture "Peter_Dillinger.jpg")
+                    (homepage "http://www.peterd.org/")
+                    (bio " B.S., M.S., and doctoral work in Computer
 Science at Georgia Tech from 1999 through 2007.  I came to
 Northeastern in 2007 with advisor Pete Manolios.  My broad interests
 include tools and techniques for development of correct systems.
@@ -242,45 +158,45 @@ Specifically, I have made contributions to explicit-state model
 checkers including Spin, Murphi, and Java Pathfinder.  I have also
 written a development environment for the ACL2 theorem prover called
 ACL2s (for \"ACL2 Sedan\")."
-                        ))
-           (person "Christos Dimoulas"
-                   (picture "christos.jpg")
-                   (homepage "http://www.ccs.neu.edu/home/chrdimo/")
-                   (bio (p "'Would you tell me, please, which way I ought to go from here?'"
-                           (br) "'That depends a good deal on where you want to get to.'"
-                           (br) "'I don't know where. . .'"
-                           (br) "'Then it doesn't matter which way you go.' said the Cat."
-                           (br) (span ((style "margin-left: 4em;")) 
-                                      "-- Alice in Wonderland, Lewis Carroll")
-                           )))
-           (person "Carl Eastlund"
-                   (picture "Carl_Eastlund.jpg")
-                   (homepage "http://www.ccs.neu.edu/home/cce/")
-                   (bio " A third-year student in the languages
+                         ))
+            (person "Christos Dimoulas"
+                    (picture "christos.jpg")
+                    (homepage "http://www.ccs.neu.edu/home/chrdimo/")
+                    (bio (p "'Would you tell me, please, which way I ought to go from here?'"
+                            (br) "'That depends a good deal on where you want to get to.'"
+                            (br) "'I don't know where. . .'"
+                            (br) "'Then it doesn't matter which way you go.' said the Cat."
+                            (br) (span ((style "margin-left: 4em;")) 
+                                       "-- Alice in Wonderland, Lewis Carroll")
+                            )))
+            (person "Carl Eastlund"
+                    (picture "Carl_Eastlund.jpg")
+                    (homepage "http://www.ccs.neu.edu/home/cce/")
+                    (bio " A third-year student in the languages
 group, I graduated with a CS degree from CMU in '01 and worked a
 couple years in industry before coming here.  My interests lie mostly
 in static analysis and functional software design.  Outside school, I
 enjoy kung fu, card games and board games, and geeky fiction genres."
-                        )
-                   )
-           #;(person "David Fisher"
-           (picture "ugly_me.jpg")
-           (bio (blink "I couldn't be bothered to submit "
-           "a picture and self-description.")))
-           (person "Jingsong Feng"
-                   (picture "jingsong.jpg")
-                   (bio " A second-year student in the programming
+                         )
+                    )
+            #;(person "David Fisher"
+            (picture "ugly_me.jpg")
+            (bio (blink "I couldn't be bothered to submit "
+            "a picture and self-description.")))
+            (person "Jingsong Feng"
+                    (picture "jingsong.jpg")
+                    (bio " A second-year student in the programming
 languages group. In 2003 I got my master degree in Linkoping
 university in Sweden, then worked one year in China as a software
 engineer before coming to Northeastern. Now I am working with
 professor Karl Lieberherr on Aspect-oriented Software Development
 related technologies. In my spare time, I like travel, watching
 movies, playing online card games, and cooking."
-                        ))
-           #|
-           (person "Rebecca Frankel"
-           (picture "Rebecca_Frankel.jpg"))
-           |#
+                         ))
+            #|
+            (person "Rebecca Frankel"
+            (picture "Rebecca_Frankel.jpg"))
+            |#
 
        (person "Christine Hang"
                (picture "christine-hang.jpg")
@@ -340,12 +256,12 @@ movies, and playing with unix.
 "
 ))
 #|
-           (person "Owen Landgren"
+            (person "Owen Landgren"
        (picture "Owen_Landgren.jpg"))
-           |#
+            |#
 
 #|
-           (person "Jeffrey Palm"
+            (person "Jeffrey Palm"
        (picture "jeffpalm.jpg")
        (homepage "http://www.ccs.neu.edu/home/jpalm/")
        (bio "
@@ -353,10 +269,10 @@ movies, and playing with unix.
        not live without my snowboard, guitar, or Scrabble board.
        "
        ))
-           |#
+            |#
 
 #|
-           (person "Greg Pettyjohn"
+            (person "Greg Pettyjohn"
        (picture "pettyjohn.jpg")
        (homepage "http://www.ccs.neu.edu/home/gregp/")
        (bio "
@@ -368,7 +284,7 @@ movies, and playing with unix.
        and a long time ago I used to bicycle and I tried a little gymnastics.
        "
        ))
-           |#
+            |#
        #;(person "Jamie Raymond"
                (picture "raymond.jpg")
                (homepage "http://www.ccs.neu.edu/home/raymond/")
@@ -423,7 +339,7 @@ talk philosophy. I am happily married and have two cats."  ))
 	       (picture "tov.jpg")
                (homepage "http://www.ccs.neu.edu/home/tov/"))
 #|
-           (person "Dale Vaillancourt"
+            (person "Dale Vaillancourt"
        (picture "Dale_Vaillancourt.jpg")
        (homepage "http://www.ccs.neu.edu/home/dalev")
        (bio "
@@ -434,7 +350,7 @@ talk philosophy. I am happily married and have two cats."  ))
        culture, food, etc.).
        "
        ))
-           |#
+            |#
        (person "Dimitris Vardoulakis"
                (homepage "http://www.ccs.neu.edu/home/dimvar/") 
                (picture "dimitris.jpg")
@@ -546,6 +462,4 @@ reflection, continuations, etc.  On leave from Ochanomizu University,
 Tokyo, Japan.My " (a ((href "http://pllab.is.ocha.ac.jp/~asai/")) "web
 page") "there."  ))
 
-
  ))))
-)
