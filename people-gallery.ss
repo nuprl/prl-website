@@ -38,7 +38,7 @@
                                                      "http://www.ccs.neu.edu/research/prl/gallery/" 
                                                      url))
                                                   (width "150px"))))))
-                                     (td ((width "350px"))
+                                     (td ((width "450px"))
                                       (h3
                                        ,@(lookup 
                                           'homepage assoc

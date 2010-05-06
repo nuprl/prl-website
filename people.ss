@@ -3,7 +3,7 @@
 
  (define people
    '(
-     ;; The bio field shoule be an Xexpr.
+     ;; The bio field is an Xexpr.
      (group "Faculty"
             (person "William D. Clinger"
                     (picture "clinger-western2_squarecrop.jpg")
@@ -445,14 +445,14 @@ should ask someone else."  ))
        (person "Joe Marshall"
                (picture "marshall.jpg")
                ;(homepage "http://home.attbi.com/~prunesquallor/")
-               (bio (p " I was born the son of a poor black
+               (bio (div (p " I was born the son of a poor black
 sharecropper.  My fathers family name being Marshall, and my christian
 name Joseph, my infant tongue could make of both names nothing longer
 or more explicit than Joseph Marshall.  So, I called myself Joseph
 Marshall, and came to be called Joseph Marshall.") (p "Some years ago
 --- never mind how long precisely --- having little or no money in my
 purse and nothing particular to interest me on shore, I thought I
-would sail about a little and see the watery part of the world.")  ))
+would sail about a little and see the watery part of the world."))  ))
        (person "Kenichi Asai"
                (homepage "http://www.ccs.neu.edu/home/asai")
                (picture "asai.jpg")

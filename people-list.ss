@@ -40,5 +40,9 @@
                           ))))
              group-name person-name assoc))]))
 
- (define page (people-list people))
+ (define page 
+   `(div
+     (div ((style "text-align:right;"))
+          (a ((href "photos.html")) "Photo gallery"))
+     ,(people-list people)))
 )

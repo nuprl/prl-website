@@ -1,5 +1,6 @@
-.mainstream {
-    font-family: sans;
+body {
+    font-family: Verdana, Helvetica, sans-serif;
+    background-color: #D8D8D8;
 }
 .sidebar {
     float: right;
@@ -11,7 +12,7 @@
     text-align: center;
     margin-top: 0;
     padding-top: 10px;
-    background-color: #FFF;
+    background-color: #D8D8D8;
 }
 
 .footer {
@@ -35,7 +36,7 @@ img {
 }
 
 a {
-    font-family: sans
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 a:link {
