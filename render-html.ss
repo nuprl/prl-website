@@ -9,7 +9,8 @@
       ("Projects" "content/projects.ss" ("projects.html" "Projects.html") #f) ;not visible
       ("People" "people-list.ss" ("people.html" "People.html") #t)
       ("Photo gallery" "people-gallery.ss" ("photos.html" "gallery/index.html") #f)
-      ("Publications" "publications.ss" ("publications.html" "Publications.html") #t)
+      ("Publications" "recent-publications.ss" ("recent_publications.html" "Publications.html") #t)
+      ("All publications" "all-publications.ss" ("all_publications.html") #f)
       ("Seminars" "content/seminars.ss" ("seminars.html" "Seminars.html") #t)))
 
   (define toplevel-files

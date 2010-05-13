@@ -19,7 +19,7 @@ body {
     float: clear;
     border-top: 1px black solid;
     margin-top: 5ex;
-    text-size: 75%;
+    font-size: 75%;
 }
 
 .sidebar > ul {
@@ -78,4 +78,14 @@ h3 {
 p {
     margin-top: 0.5ex;
     text-align: justify;
+}
+
+.paper-title {
+   margin-bottom: 0;
+   margin-top: 0.9x;
+}
+
+.published-in{
+   font-size: x-small;
+   margin-left: 5em;
 }

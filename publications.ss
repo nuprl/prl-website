@@ -1,5 +1,5 @@
 (module publications scheme
- (provide page) ;the default page is date-ordered
+ (provide pubs-in-range-inclusive pubs-by-date pubs-date-page)
 
  (define (pub-fixup pub)
    (match pub
@@ -61,7 +61,40 @@
     (lambda (pub) (cadr (assoc 'year (cadr (assoc 'date (cdr pub))))))
     < =))
 
- (define (pubs-date-list pubs)
+ (define (pubs-in-range-inclusive start-year end-year)
+   (filter (lambda (year-group)
+             (<= start-year (car year-group) end-year))
+           pubs-by-date))
+
+
+
+
+
+
+ (define (maybe-list fields sym drop-in) ;for when the fields have ('sym item item item ...)
+   (if (assoc sym fields)
+       (drop-in (cdr (assoc sym fields)))
+       '(span)))
+
+ (define (maybe-item fields sym drop-in) ;for when the fields have ('sym item)
+   (maybe-list fields sym (lambda (x) (drop-in (car x)))))
+   
+ (define (published-line published-expr)
+   ;idiosyncratic formats
+   `(span ((class "published-in"))
+     ,(match published-expr
+        [(list (list (list 'in place)
+                     more-info ...))
+         `(span "in " ,place
+                ,(maybe-item more-info 'issue (lambda (x) `(span " (" ,x ") ")))
+                ,(maybe-item more-info 'pages (lambda (x) `(span " pp. " ,x))))]
+        [(list (list) desc)
+         desc]
+        [(list desc)
+         desc])))
+      
+
+ (define (pubs-date-page pubs)
    (match pubs
      [(list
        (list year
@@ -72,44 +105,34 @@
            (lambda (year fields)
              `(div 
                ((class "pub-group"))
-               (a ((name ,(string-append "year" (number->string year))))
-                  (h2 ,(number->string year)))
+      ;The space is a hack that we wouldn't need if we correctly identified ourselves as XHTML. I think.
+               (a ((name ,(string-append "year" (number->string year)))) " ")
+               (h2 ((class "year-header")) ,(number->string year))
                ,@(map
                   (lambda (fields)
-                    `(div (h4 (i ,(cadr (assoc 'title fields)))
-                              ,@(map (lambda (link-item)  
-                                       (let* ((link (cadr (assoc 'link (cadr link-item))))
-                                              (format-specified (cadr (assoc 'format (cadr link-item))))
-                                              (format
-                                               (if (symbol? format-specified) ;'auto
-                                                   (let ((guessed-extension 
-                                                          (string-upcase 
+                    `(div 
+                      ,(maybe-item fields 'anchor (lambda (x) `(a ((name ,x)) " ")))
+                      (h4 ((class "paper-title")) (i ,(cadr (assoc 'title fields)))
+                          ,@(map (lambda (link-item)  
+                                   (let* ((link (cadr (assoc 'link (cadr link-item))))
+                                          (format-specified (cadr (assoc 'format (cadr link-item))))
+                                          (format
+                                           (if (symbol? format-specified) ;'auto
+                                               (let ((guessed-extension 
+                                                      (string-upcase 
                                         ;drop everything before the (first period after the last slash):
-                                                           (regexp-replace "^.*/.*?[.]" link ""))))
-                                                     (if (< 1 (string-length guessed-extension) 5)
-                                                         guessed-extension
-                                                         "download")) ;fallback
-                                                   format-specified)))
-                                       `(small " (" (a ((href ,link))
-                                                  ,format) ")")))
-                                     (filter (lambda (field) (symbol=? 'download (car field))) fields))
-                              )
-                          (span ((class "pub-authors")) ,@(cadr (assoc 'authors fields)))
-                          
-                          ))
+                                                       (regexp-replace "^.*/.*?[.]" link ""))))
+                                                 (if (< 1 (string-length guessed-extension) 5)
+                                                     guessed-extension
+                                                     "download")) ;fallback
+                                               format-specified)))
+                                     `(small " (" (a ((href ,link))
+                                                     ,format) ")")))
+                                 (filter (lambda (field) (symbol=? 'download (car field))) fields)))
+                      (span ((class "pub-authors")) ,@(cadr (assoc 'authors fields))) (br)
+                      ,(maybe-list fields 'published published-line)))
                   fields)))
            year fields))]))
 
- (define page
-   `(div
-     (span ((style "text-align: center;"))
-           ,@(sxml-join
-              (map (lambda (year-group)
-                    (let ((year (number->string (car year-group))))
-                      `(a ((href ,(string-append "#year" year)))
-                           ,year)))
-                  pubs-by-date)
-              " "))
-     ,(pubs-date-list pubs-by-date)))
 
 )
