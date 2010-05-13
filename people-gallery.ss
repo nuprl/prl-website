@@ -6,8 +6,9 @@
  
 
  ;returns a list (possibly 0) sxml elements, ready for splicing in
- (define (lookup sym assoc fn [otherwise '()])
-   (cond [(assq sym assoc) => (lambda (arg) (list " " (fn (cadr arg))))]
+ (define (lookup sym assoc allow-list fn [otherwise '()])
+   (cond [(assq sym assoc) => (lambda (arg) 
+                                ((if allow-list cons list) " " (fn ((if allow-list cdr cadr) arg))))]
          [else otherwise]))
 
  
@@ -25,13 +26,13 @@
                          (table
                           ,@(map 
                              (lambda (person-name assoc)
-                               (if (and (null? (lookup 'picture assoc (lambda (x) x)))
-                                        (null? (lookup 'bio assoc (lambda (x) x))))
+                               (if (and (null? (lookup 'picture assoc #f (lambda (x) x)))
+                                        (null? (lookup 'bio assoc #f (lambda (x) x))))
                                    '(div)
                                    `(tr
                                      (td
                                       ,@(lookup 
-                                         'picture assoc
+                                         'picture assoc #f
                                          (lambda (url) 
                                            `(img ((src 
                                                    ,(string-append 
@@ -41,10 +42,10 @@
                                      (td ((width "450px"))
                                       (h3
                                        ,@(lookup 
-                                          'homepage assoc
+                                          'homepage assoc #f
                                           (lambda (url) `(a ((href ,url)) ,person-name))
                                           `(,person-name)))
-                                      ,@(lookup 'bio assoc (lambda (x) x))))))
+                                      ,@(lookup 'bio assoc #t (lambda (x) x))))))
                              person-name assoc)
                           ))))
              group-name person-name assoc))]))

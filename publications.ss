@@ -114,7 +114,8 @@
                       ,(maybe-item fields 'anchor (lambda (x) `(a ((name ,x)) " ")))
                       (h4 ((class "paper-title")) (i ,(cadr (assoc 'title fields)))
                           ,@(map (lambda (link-item)  
-                                   (let* ((link (cadr (assoc 'link (cadr link-item))))
+                                   (let* ((link ;BibTeX likes to add linebreaks:
+                                           (regexp-replace "\n" (cadr (assoc 'link (cadr link-item))) ""))
                                           (format-specified (cadr (assoc 'format (cadr link-item))))
                                           (format
                                            (if (symbol? format-specified) ;'auto
