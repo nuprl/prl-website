@@ -111,9 +111,9 @@ FUNCTION {output.check}
 
 FUNCTION {output.bibitem.nolink}
 { newline$
-  "<dt>[" write$
+  "(dt " quote$ * "[" quote$ * " " * write$
   cite$ write$
-  "]<dd><p>" write$
+  " " quote$ * "]" quote$ * " (dd (p" * write$
   newline$
   ""
   before.all 'output.state :=
@@ -121,22 +121,22 @@ FUNCTION {output.bibitem.nolink}
 
 FUNCTION {output.bibitem.link}
 { newline$
-  "<dt><a href=" write$
+  "(dt (a ((href " quote$ * write$
   URL write$
-  ">" write$
+  quote$ * "))" write$
   newline$
-  "[" write$
+  " " quote$ * "[" * quote$ * " " * write$
   cite$ write$
-  "]</a><dd><p>" write$
+  " " quote$ * "]" * quote$ * " ) (dd (p" * write$
   newline$
   ""
   before.all 'output.state :=
 }
 
 % FUNCTION {write.quoted} { quote$ write$ write$ quote$ write$ }
-FUNCTION {write.quoted} { "#<<ENDQUOTED" write$ newline$ 
-			                 write$ newline$ 
-			  "ENDQUOTED"    write$ newline$ }
+FUNCTION {write.quoted} { " " quote$ * write$
+			  write$
+			  quote$ write$ }
 
 FUNCTION {authors.or.editors} { author duplicate$ empty$ { pop$ editor ", editors" * } 'skip$ if$ }
 
@@ -146,9 +146,9 @@ FUNCTION {maybe.do} { duplicate$ empty$ 'pop$ }
 FUNCTION {poptwice}   { pop$ pop$ }
 FUNCTION {write.pubf} { swap$ "(" write$ write$ write.quoted ") " write$ }
 FUNCTION {write.pubf.herexexpr} { 
-	swap$ "(" write$ write$ "#<>ENDABSTRACT" write$ newline$ 
-	write$ newline$  
-	"ENDABSTRACT" write$ newline$ 
+	swap$ "(" write$ write$ newline$ quote$ write$
+	write$
+	quote$ write$ newline$ 
 	") " write$ newline$ }
 FUNCTION {maybe.write.pubf} { duplicate$ empty$ 'poptwice 'write.pubf if$ }
 FUNCTION {maybe.write.pubf.herexexpr} { duplicate$ empty$ 'poptwice 'write.pubf.herexexpr if$ }
@@ -190,7 +190,8 @@ FUNCTION {output.bibitem}
                     "(year "  write$ year  write.quoted ")" write$
                                                            "))" write$ newline$
   output.bibitem.fields
-  URL empty$ 'skip$ { "   (download "   write$ URL write.quoted ")" write$ newline$ } if$
+  URL empty$ 'skip$ { "   (download ((format auto) (link" write$ 
+                      URL write.quoted ")))" write$ newline$ } if$
   note empty$ 'skip$ { "   (note " write$ note write.quoted ")" write$ newline$ } if$
 
   ")" write$ newline$ newline$
@@ -203,7 +204,7 @@ FUNCTION {output.bibitem}
 
 FUNCTION {output.abstract.really}
 { newline$ newline$
-  "<strong>Abstract: </strong>" write$ 
+  "(strong " quote$ * "Abstract:" * quote$ * ")" * write$ 
   write$
 }
 
@@ -304,7 +305,7 @@ FUNCTION {field.or.null}
 FUNCTION {emphasize}
 { duplicate$ empty$
     { pop$ "" }
-    { "<em> " swap$ * "</em>" * }
+    { "(em " swap$ * ")" * }
   if$
 }
 
@@ -1088,7 +1089,7 @@ FUNCTION {begin.bib}
 %    if$
 
 %  ""  longest.label  * "" * write$ newline$
-  "`(" write$ newline$
+  "(module bibtexpubs scheme (provide bib) (define bib `(" write$ newline$
 
 }
 
@@ -1102,7 +1103,7 @@ REVERSE {call.type$}
 
 FUNCTION {end.bib}
 { newline$
-  ")" write$ newline$
+  ")))" write$ newline$
 }
 
 EXECUTE {end.bib}

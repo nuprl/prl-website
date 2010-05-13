@@ -11,10 +11,10 @@
          [else otherwise]))
 
  
-   (define (people-gallery people)
-     (match people
+   (define people-gallery
+     (match grouped-people
        [(list 
-         (list 'group group-name
+         (list group-name
                  (list 'person person-name assoc ...) ...) ...)
         `(div
           ,@(map 
@@ -49,5 +49,5 @@
                           ))))
              group-name person-name assoc))]))
 
- (define page (people-gallery people))
+ (define page people-gallery)
 )

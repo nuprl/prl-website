@@ -1,0 +1,1 @@
+(module karl-lieberherr scheme (provide me) (define me (quote (person "Karl Lieberherr" (group "Faculty") (picture "karl2.gif") (homepage "http://www.ccs.neu.edu/home/lieber") (bio " Karl Lieberherr got his PhD in Switzerland and he likes mountains, lakes and yoga. He likes shy programming, be it structure-shy, concern-shy, or module-shy.")))))

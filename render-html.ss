@@ -5,11 +5,12 @@
 
   ;first filename in the list is the actual name, others are redirects
   (define all-files
-    '(("Home" "home.ss" ("home.html" "index.html") #t)
-      ("Projects" "projects.ss" ("projects.html" "Projects.html") #f) ;not visible
+    '(("Home" "content/home.ss" ("home.html" "index.html") #t)
+      ("Projects" "content/projects.ss" ("projects.html" "Projects.html") #f) ;not visible
       ("People" "people-list.ss" ("people.html" "People.html") #t)
       ("Photo gallery" "people-gallery.ss" ("photos.html" "gallery/index.html") #f)
-      ("Seminars" "seminars.ss" ("seminars.html" "Seminars.html") #t)))
+      ("Publications" "publications.ss" ("publications.html" "Publications.html") #t)
+      ("Seminars" "content/seminars.ss" ("seminars.html" "Seminars.html") #t)))
 
   (define toplevel-files
     (filter cadddr all-files))
@@ -44,7 +45,7 @@
   ; effect: create or overwrite file.html with page
   (define (produce-page page-stuff)
     (let ((title (car page-stuff))
-          (sxml-source (cadr page-stuff)))
+          (sxml-source (string-append (cadr page-stuff))))
       (printf " ... ~s~n" title)
       
       (let ((sxml (apply-general-style (dynamic-require sxml-source 'page) title))
