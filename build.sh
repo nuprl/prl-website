@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo " -- gathering information from .prl directories -- "
+echo "cp will fail to find everything it wants in ~/.prl directories now.  This is normal."
 for u in `cat content/usernames`; do
     cp /home/$u/.prl/bio.ss     content/people/$u.bio.ss
     cp /home/$u/.prl/pubs.ss    content/pubs/$u.pubs.ss
@@ -16,6 +18,8 @@ cat content/pubs/*.bib > working/allpubs.bib
 cp allpubs.aux working/
 cp sxml.bst working/
 
+echo " -- building publication information -- "
+
 cp content/pubs/*.xml working/
 cp content/pubs/*.ss  working/
 
@@ -30,4 +34,8 @@ detex bibtexpubs.withbackslashes > bibtexpubs.ss
 
 cd ../
 
+echo " -- generating HTML -- "
+
 mzscheme render-html.ss
+
+echo " -- done -- "

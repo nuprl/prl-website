@@ -47,7 +47,7 @@
   (define (produce-page page-stuff)
     (let ((title (car page-stuff))
           (sxml-source (string-append (cadr page-stuff))))
-      (printf " ... ~s~n" title)
+      (printf "generating \"~a\"~n" title)
       
       (let ((sxml (apply-general-style (dynamic-require sxml-source 'page) title))
             (file.html (open-output-file (string-append "output/" (car (filenames page-stuff)))
@@ -71,6 +71,6 @@
 
   (for-each produce-page all-files)
   (produce-redirects)
-
+  
 
 )
