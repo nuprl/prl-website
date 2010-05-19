@@ -1,2 +1,0 @@
-#lang scheme
-(provide me)(define me (quote (person "Christos Dimoulas" (group "Students") (picture "gallery/christos.jpg") (homepage "http://www.ccs.neu.edu/home/chrdimo/") (bio (p "'Would you tell me, please, which way I ought to go from here?'" (br) "'That depends a good deal on where you want to get to.'" (br) "'I don't know where. . .'" (br) "'Then it doesn't matter which way you go.' said the Cat." (br) (span ((style "margin-left: 4em;")) "-- Alice in Wonderland, Lewis Carroll"))))))

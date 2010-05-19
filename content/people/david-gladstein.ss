@@ -1,2 +1,0 @@
-#lang scheme
-(provide me)(define me (quote (person "David Gladstein" (group "Alumni") (graduated 1996) (thesis "ftp://www.ccs.neu.edu/pub/people/wand/papers/gladstein-thesis-94.ps.Z"))))

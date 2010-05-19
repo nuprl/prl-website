@@ -1,2 +1,0 @@
-#lang scheme
-(provide me)(define me (quote (person "John Brinckerhoff Clements" (group "Alumni") (picture "gallery/clements.jpg") (homepage "http://www.csc.calpoly.edu/~clements/index.html") (thesis "http://www.ccs.neu.edu/scheme/pubs/dissertation-clements.pdf") (bio "I have a family and a house and an hourglass on my desk. I will gladly tackle questions on functional programming, debugging, annotation, and macros. The rest of the questions you should ask someone else."))))
