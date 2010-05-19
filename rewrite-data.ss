@@ -474,8 +474,15 @@ page") "there."  ))
     (cond [(string? a) (regexp-replace* "( |\n)+" a " ")]
           [else a]))
   
-
-
+  (define (fixup-image-url assoc)
+    (cond
+      [(empty? assoc) '()]
+      [(symbol=? 'picture (caar assoc))
+       (cons `(picture ,(string-append "gallery/" (cadar assoc)))
+             (cdr assoc))]
+      [else
+       (cons (car assoc)
+             (fixup-image-url (cdr assoc)))]))
 
 
   (for-each
@@ -492,14 +499,13 @@ page") "there."  ))
             (call-with-output-file (string-append "content/people/" schemier-name ".ss")
               #:exists 'replace
               (lambda (out)
-                (fprintf out "~s~%" 
+                (fprintf out "#lang scheme~%~s~s~%" 
+                         '(provide me)
                          (map* string-cleaning
-                               `(module ,(string->symbol schemier-name) scheme
-                                  (provide me)
-                                  (define me 
-                                    '(person ,(cadr person) ;name
-                                             (group ,gname)
-                                             ,@(cddr person))))))))
+                               `(define me 
+                                  '(person ,(cadr person) ;name
+                                           (group ,gname)
+                                           ,@(fixup-image-url (cddr person))))))))
             ))
         (cddr group)) ;members
        ))

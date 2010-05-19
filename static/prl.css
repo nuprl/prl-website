@@ -1,6 +1,6 @@
 body {
     font-family: Verdana, Helvetica, sans-serif;
-    background-color: #D8D8D8;
+    background-color: #E0E0E0;
 }
 .sidebar {
     float: right;
@@ -12,7 +12,7 @@ body {
     text-align: center;
     margin-top: 0;
     padding-top: 10px;
-    background-color: #D8D8D8;
+    background-color: #E0E0E0;
 }
 
 .footer {
@@ -78,6 +78,14 @@ h3 {
 p {
     margin-top: 0.5ex;
     text-align: justify;
+}
+
+
+.year-header {
+   margin-top: 5ex;
+   border-top: 3px solid black;
+   padding-top: 0;
+   width: 25em;
 }
 
 .paper-title {

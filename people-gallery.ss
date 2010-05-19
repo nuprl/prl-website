@@ -34,10 +34,7 @@
                                       ,@(lookup 
                                          'picture assoc #f
                                          (lambda (url) 
-                                           `(img ((src 
-                                                   ,(string-append 
-                                                     "http://www.ccs.neu.edu/research/prl/gallery/" 
-                                                     url))
+                                           `(img ((src ,url)
                                                   (width "150px"))))))
                                      (td ((width "450px"))
                                       (h3
