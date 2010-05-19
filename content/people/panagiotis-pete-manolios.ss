@@ -1,1 +1,2 @@
-(module panagiotis-pete-manolios scheme (provide me) (define me (quote (person "Panagiotis (Pete) Manolios" (group "Faculty") (picture "Pete_Manolios.jpeg") (homepage "http://www.cc.gatech.edu/~manolios/")))))
+#lang scheme
+(provide me)(define me (quote (person "Panagiotis (Pete) Manolios" (group "Faculty") (picture "gallery/Pete_Manolios.jpeg") (homepage "http://www.cc.gatech.edu/~manolios/"))))

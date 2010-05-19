@@ -1,1 +1,2 @@
-(module paul-steckler scheme (provide me) (define me (quote (person "Paul Steckler" (group "Alumni") (graduated 1994) (thesis "ftp://www.ccs.neu.edu/pub/people/wand/papers/steckler-thesis-94.ps") (homepage "http://www.ccs.neu.edu/home/steck/")))))
+#lang scheme
+(provide me)(define me (quote (person "Paul Steckler" (group "Alumni") (graduated 1994) (thesis "ftp://www.ccs.neu.edu/pub/people/wand/papers/steckler-thesis-94.ps") (homepage "http://www.ccs.neu.edu/home/steck/"))))

@@ -1,1 +1,2 @@
-(module sergei-kojarski scheme (provide me) (define me (quote (person "Sergei Kojarski" (group "Students") (picture "kojarski-sergei.jpg") (bio " I am a fourth-year PhD student. I came from Perm, Russia. My CS interests are in the PL field, particularly in the Object-Oriented area. Besides that I like to read classic literature and just have fun with my friends... ")))))
+#lang scheme
+(provide me)(define me (quote (person "Sergei Kojarski" (group "Students") (picture "gallery/kojarski-sergei.jpg") (bio " I am a fourth-year PhD student. I came from Perm, Russia. My CS interests are in the PL field, particularly in the Object-Oriented area. Besides that I like to read classic literature and just have fun with my friends... "))))
