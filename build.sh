@@ -7,6 +7,9 @@ for u in `cat content/usernames`; do
     cp -r /home/$u/.prl/static  output/static-$u
 done
 
+cp content/centralized-people/* content/people/
+cp content/centralized-pubs/* content/pubs/
+
 cp -r content/gallery output/gallery
 
 cat content/pubs/*.bib > working/allpubs.bib
