@@ -1,0 +1,2 @@
+#lang scheme
+(provide me)(define me (quote (person "Carl Eastlund" (group "Students") (picture "gallery/Carl_Eastlund.jpg") (homepage "http://www.ccs.neu.edu/home/cce/") (bio " A third-year student in the languages group, I graduated with a CS degree from CMU in '01 and worked a couple years in industry before coming here. My interests lie mostly in static analysis and functional software design. Outside school, I enjoy kung fu, card games and board games, and geeky fiction genres."))))

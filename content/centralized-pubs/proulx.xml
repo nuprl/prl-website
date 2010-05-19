@@ -1,0 +1,158 @@
+<papers>
+        <paper title="Design of Class Hierarchies: An Introduction to OO Program Design">
+                <authors>Viera K. Proulx and Kathryn E. Gray</authors>
+		<conf>SIGCSE 2006</conf>
+		<comment>Conference version of the ECOOP 2005 paper.</comment>
+	</paper>
+	<paper title="Java IO and Testing Made Simple">
+		<authors>Viera K. Proulx and Richard Rasala</authors>
+		<pdf>JavaSimple-sigcse2004.pdf</pdf>
+		<doc>..</doc>
+		<conf>SIGCSE 2003</conf>
+          <comment>Presents the use of JPF for IO, testing and exploration of Java code.</comment>
+	</paper> 
+
+	<paper title="Simple Problem Solving in Java: A Problem Set Framework">
+		<authors>Viera K. Proulx, Richard Rasala, and Jason Jay Rodrigues</authors>
+		<pdf>PSF-ccscne2003.pdf</pdf>
+		<doc>PSF-ccscne2003.doc</doc>
+		<conf>CCSCNE 2003</conf>
+          <comment>Presents the Problem Set Framework for testing of Java code.</comment>
+	</paper> 
+
+	<paper title="Objects From the Beginning - With GUIs">
+		<authors>Viera K. Proulx, Jeff Raab, and Richard Rasala</authors>
+		<pdf>GUIs-iticse2002.pdf</pdf>
+		<doc>GUIs-iticse2002.doc</doc>
+		<conf>ITiCSE 2003</conf>
+          <comment>Interactive GUI-based labs for introducing objects first.</comment>
+	</paper> 
+
+	<paper title="The SIGCSE 2001 Maze Demonstration Program">
+		<authors>Richard Rasala, Jeff Raab, and Viera K. Proulx</authors>
+		<pdf>Maze-sigcse2002.pdf</pdf>
+		<doc>Maze-sigcse2002.doc</doc>
+		<conf>SIGCSE 2002</conf>
+          <comment>Illustrates the use of Java Power Tools for rapid GUI building.</comment>
+	</paper> 
+
+	<paper title="Java Power Tools: A Foundation for Interactive HCI Exploration">
+		<authors>Viera K. Proulx, Richard Rasala, and Jeff Raab</authors>
+		<pdf>JPTandHCI.pdf</pdf>
+		<doc>JPTandHCI.doc</doc>
+		<conf>HCI 2001</conf>
+          <comment>Java Power Tools for GUI building and exploration.</comment>
+	</paper> 
+
+	<paper title="Java Power Tools:Model Software for Teaching Object-Oriented Design">
+		<authors>Richard Rasala, Jeff Raab, Viera K. Proulx</authors>
+		<pdf>JPT-sigcse2001.pdf</pdf>
+		<doc>JPT-sigcse2001.doc</doc>
+		<conf>SIGCSE 2001</conf>
+          <comment>The first overview of the Java Power Tools toolkit.</comment>
+	</paper> 
+
+	<paper title="Traffic Light: A Pedagogical Exploration Through a Design Space">
+		<authors>Viera K. Proulx, Jeff Raab, and Richard Rasala</authors>
+		<pdf>TrafficLight-ccscne2000.pdf</pdf>
+		<doc>TrafficLight-ccscne2000.doc</doc>
+		<conf>CCSCNE 2000</conf>
+          <comment>Illustrates the use of graphics and GUIs to represent classes 
+          and objects.</comment>
+	</paper> 
+
+	<paper title="Programming Patterns and Design Patterns in the Introductory Computer Science Course">
+		<authors>Viera K. Proulx</authors>
+		<pdf>Patterns-sigcse2000.pdf</pdf>
+		<doc>Patterns-sigcse2000.doc</doc>
+		<conf>SIGCSE 2000</conf>
+          <comment>Presents the pedagogy of elementary program patterns for novice programmers.</comment>
+	</paper> 
+
+	<paper title="Hospital Emergency Room Simulation: Object Oriented Design Issues for CS2">
+		<authors>Viera K. Proulx</authors>
+		<pdf>Hospital-sigcse1999.pdf</pdf>
+		<doc>Hospital-sigcse1999.doc</doc>
+		<conf>SIGCSE 1999</conf>
+          <comment>A programming project to explore a variety of interacting classes and objects.</comment>
+	</paper> 
+        
+        <paper title="Traffic Simulation: A Case Study for Teaching Object-Oriented Design">
+		<authors>Viera K. Proulx</authors>
+		<pdf>Traffic-sigcse98.pdf</pdf>
+		<doc>Traffic-sigcse98.doc</doc>
+		<conf>SIGCSE 1998</conf>
+          <comment>A programming project with a nubmer of interacting classes and objects.</comment>
+	</paper> 
+
+        <paper title="Scaling: A Design Pattern in Introductory Computer Science Courses">
+		<authors>Harriet J. Fell, Viera K. Proulx, and Richard Rasala</authors>
+		<pdf>Scaling-sigcse98.pdf</pdf>
+		<doc>Scaling-sigcse98.doc</doc>
+		<conf>SIGCSE 1998</conf>
+          <comment>A study of scaling as a fundamental design concept.</comment>
+	</paper> 
+
+        <paper title="Usage Simulation for Evaluating Educational Materials">
+		<authors>Viera K. Proulx, and Joseph W. Proulx</authors>
+		<pdf>Evaluation-ccscne98.pdf</pdf>
+		<doc>Evaluation-ccscne98.doc</doc>
+		<conf>CCSCNE 1998</conf>
+          <comment>Evaluation of Lab Materials by a Targeted User.</comment>
+	</paper> 
+
+        <paper title="Recursion and Grammars for CS2">
+		<authors>Viera K. Proulx</authors>
+		<pdf>Recursion-iticse97.pdf</pdf>
+		<doc>Recursion-iticse97.doc</doc>
+		<conf>SIGCSE 1997</conf>
+          <comment>A programming project using L-systems grammars to generate fractal drawings.</comment>
+	</paper> 
+
+        <paper title="Exploring Martian Planetary Images C++ Exercises for CS1">
+		<authors>Harriet Fell and Viera K. Proulx</authors>
+		<pdf>Mars-sigcse97.pdf</pdf>
+		<doc>Mars-sigcse97.doc</doc>
+		<conf>SIGCSE 1997</conf>
+          <comment>A programming project to explore image processing in the context of Mars images.</comment>
+	</paper> 
+        
+        <paper title="Writing Across Computer Science Curriculum">
+		<authors>Harriet J. Fell, Viera K. Proulx, and John Casey</authors>
+		<pdf>Writing-sigcse97.pdf</pdf>
+		<doc>Writing-sigcse97.doc</doc>
+		<conf>SIGCSE 1997</conf>
+          <comment>Examples of opportunities to develop writing skills.</comment>
+	</paper> 
+
+
+        <paper title="Foundations of Computer Science: What Are They and How Do We Teach Them">
+		<authors>Harriet J. Fell, Viera K. Proulx, and Richard Rasala</authors>
+		<pdf>Foundations-iticse96.pdf</pdf>
+		<doc>..</doc>
+		<conf>ITiCSE 1996</conf>
+          <comment>Design, apprentice learning, software support, visualization.</comment>
+	</paper> 
+        
+        <paper title="From Animation to Analysis in Introductory Computer Science">
+		<authors>Richard Rasala Viera K. Proulx, and Harriet J. Fell</authors>
+		<pdf>Analysis-sigcse94.pdf</pdf>
+		<doc>Analysis-sigcse94.doc</doc>
+		<conf>SIGCSE 1994</conf>
+          <comment>Complexity of algorithms through animation and measurements.</comment>
+	</paper> 
+        
+        
+        
+
+        <paper title="Instructional Frameworks: Toolkits and Abstractions in Introductory Computer Science">
+		<authors>Cynthia Brown, Harriet Fell, Viera Proulx, and Richard Rasala</authors>
+		<pdf>Frameworks-csc1993.pdf</pdf>
+		<doc>Frameworks-csc1993.pdf</doc>
+		<conf>CSC 1993</conf>
+          <comment>Toolkits and graphics in support of apprentice style of learning.</comment>
+	</paper> 
+
+        
+        
+</papers>

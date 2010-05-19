@@ -1,0 +1,2 @@
+#lang scheme
+(provide me)(define me (quote (person "Christine Hang" (group "Students") (picture "gallery/christine-hang.jpg") (homepage "http://www.ccs.neu.edu/home/danhang/") (bio "I am a third-year PhD student from Beijing and Grand Rapids, Michigan. I am interested in PL, especially domain specific languages, and I've always wanted to solve hard problems in other fields via PL. Aside from school, I enjoy traveling, reading, swimming, photography and collecting scarves. "))))

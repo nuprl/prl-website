@@ -1,0 +1,2 @@
+#lang scheme
+(provide me)(define me (quote (person "Aaron J. Turon" (group "Students") (picture "gallery/Aaron_Turon.jpg") (homepage "http://people.cs.uchicago.edu/~adrassi/") (bio " I'm a first-year PhD student in the PRL. Interests in PL semantics, type theory, and logic. Outside of CS, I write music (electronica), read novels, watch movies, and sometimes talk philosophy. I am happily married and have two cats."))))

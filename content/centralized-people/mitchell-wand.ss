@@ -1,0 +1,2 @@
+#lang scheme
+(provide me)(define me (quote (person "Mitchell Wand" (group "Faculty") (picture "gallery/wand.gif") (homepage "http://www.ccs.neu.edu/home/wand/") (bio " I got my Ph.D. from MIT in 1973, and I've been at Northeastern since 1985. When I'm not thinking about programming languages or other CS-related things, I play jazz piano and dote on my twin granddaughters. "))))
