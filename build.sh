@@ -12,7 +12,7 @@ done
 cp content/centralized-people/* content/people/
 cp content/centralized-pubs/* content/pubs/
 
-cp -r content/gallery output/gallery
+cp -r content/centralized-pics output/gallery
 
 cat content/pubs/*.bib > working/allpubs.bib
 cp allpubs.aux working/
