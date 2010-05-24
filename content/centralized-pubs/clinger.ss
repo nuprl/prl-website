@@ -29,7 +29,7 @@
 '(a ((href "http://www.ccs.neu.edu/home/wand/")) "Mitchell Wand"))
 
 (define will-clinger 
-'(a ((href "http://www.ccs.neu.edu/home/will/index.html")) "William D Clinger"))
+'(a ((href "http://www.cesura17.net/~will/Professional")) "William D Clinger"))
 
 (define acm-copyright 
 '(a ((href "http://www.acm.org/pubs/copyright_policy/")) "ACM"))
@@ -40,9 +40,9 @@
  (authors ,will-clinger)
  (title "Common Larceny")
  (download ((format "PDF")
-            (link "http://www.ccs.neu.edu/home/will/Research/ILC2005/commonLarceny.pdf")))
+            (link "http://www.cesura17.net/~will/Professional/Research/Presentations/ILC2005/commonLarceny.pdf")))
  (download ((format "HTML slides")
-            (link "http://www.ccs.neu.edu/home/will/Research/ILC2005/Slides/title.html")))
+            (link "http://www.cesura17.net/~will/Professional/Research/Presentations/ILC2005/Slides/title.html")))
  (download ((format "MP3 of the conference presentation")
             (link "http://international-lisp-conference.org/2005/media/clinger-audio.mp3")))
  (date ((month "June")
@@ -52,7 +52,7 @@
  (authors ,will-clinger)
  (title "How to Read Floating Point Numbers Accurately (Retrospective)")
  (download ((format "PDF")
-            (link "ftp://ftp.ccs.neu.edu/pub/people/will/retrospective.pdf")))
+            (link "http://www.cesura17.net/~will/Professional/Research/Papers/retrospective.pdf")))
  (date ((month "April")
         (year "2004")))
  (copyright ,acm-copyright)
@@ -63,7 +63,7 @@ Design and Implementation: 1979 - 1999. A Selection., April 2004")))
  (authors "Lars T Hansen" ,will-clinger)
  (title   "An experimental study of renewal-older-first garbage collection")
  (download ((format "PDF")
-            (link "ftp://ftp.ccs.neu.edu/pub/people/will/p131-hansen.pdf")))
+            (link "http://cesura17.net/~will/Professional/Research/Papers/p131-hansen.pdf")))
  (date ((month "October")
         (year "2002")))
  (copyright ,acm-copyright)
