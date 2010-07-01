@@ -1,1 +1,1 @@
-Current plan: each *.sxml file provides a 'page' of SXML, which render-html.ss dumps into a template.
+Look at the README in the content/ directory to see how to update your data.
