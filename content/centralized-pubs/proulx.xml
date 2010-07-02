@@ -1,6 +1,7 @@
 <papers>
         <paper title="Design of Class Hierarchies: An Introduction to OO Program Design">
                 <authors>Viera K. Proulx and Kathryn E. Gray</authors>
+                <pdf>HtDCH-sigcse2006.pdf</pdf>
 		<conf>SIGCSE 2006</conf>
 		<comment>Conference version of the ECOOP 2005 paper.</comment>
 	</paper>
