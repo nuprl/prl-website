@@ -13,39 +13,39 @@ function error_check() {
 }
 
 mkdir -p output
+mkdir -p working/people
+mkdir -p working/pubs
 
 echo " -- gathering information from .prl directories -- "
 for u in `cat content/usernames`; do
     if [ -e /home/$u/.prl/bio.ss ] ; then
-        cp /home/$u/.prl/bio.ss     content/people/$u.bio.ss
+        cp /home/$u/.prl/bio.ss     working/people/$u.bio.ss
     fi
     if [ -e /home/$u/.prl/pubs.ss ] ; then
-        cp /home/$u/.prl/pubs.ss    content/pubs/$u.pubs.ss
+        cp /home/$u/.prl/pubs.ss    working/pubs/$u.pubs.ss
     fi
     if [ -e /home/$u/.prl/pubs.bib ] ; then
-        cp /home/$u/.prl/pubs.bib   content/pubs/$u.pubs.bib
+        cp /home/$u/.prl/pubs.bib   working/pubs/$u.pubs.bib
     fi
     if [ -d /home/$u/.prl/static ] ; then
         cp -r /home/$u/.prl/static  output/static-$u
     fi
 done
 
-cp content/centralized-people/* content/people/
-cp content/centralized-pubs/* content/pubs/
+cp content/centralized-people/* working/people/
+cp content/centralized-pubs/* working/pubs/
 
 cp -r content/centralized-pics output/gallery
 
-cat content/pubs/*.bib > working/allpubs.bib
-cp allpubs.aux working/
-cp sxml.bst working/
+cat working/pubs/*.bib > working/pubs/allpubs.bib
+cp allpubs.aux working/pubs/
+cp sxml.bst working/pubs/
 
 echo " -- building publication information -- "
 
-cp content/pubs/*.xml working/
-cp content/pubs/*.ss  working/
 
-cd working/
-mzscheme ../xml-to-sxml.ss *.xml 2> errorlog
+cd working/pubs/
+mzscheme ../../xml-to-sxml.ss *.xml 2> errorlog
 error_check
 
 bibtex allpubs 2> errorlog
@@ -56,7 +56,7 @@ mv allpubs.bbl bibtexpubs.withbackslashes
 #the backslashes get us into trouble otherwise
 detex bibtexpubs.withbackslashes > bibtexpubs.ss
 
-cd ../
+cd ../../
 
 echo " -- generating HTML -- "
 

@@ -2,7 +2,7 @@ The PRL website slurps data from two sources: the centralized data directories
 here, and the .prl/ directory in the home directory of anyone in the 'usernames'
 file.  I moved all the website's old content into these centralized directories,
 but I recommend that you add yourself to 'usernames' and manage your information
-from ~/.prl
+from ~/.prl (and remove yourself from the centralized directories)
 
 
 The contents of this directory
@@ -11,8 +11,6 @@ The contents of this directory
   centralized-pubs/     # if possible, move infomation to ~/.prl/pubs.{bib,ss}
   centralized-pics/     # move your picture into ~/.prl/static/
                         #   and update bio.ss with the new relative URL
-  people/               # (automatically generated from centralized-people/ and ~*/.prl/bio.ss)
-  pubs/                 # (automatically generated from centralized-pubs/ and ~*/.prl/pubs.{bib,ss})
   README                # <-- you are here
 
 The contents of your ~/.prl/ directory:
@@ -47,10 +45,10 @@ Otherwise, create a new "bio.ss" file.  An example follows:
  (define me
    '(person "Paul Erdos"
       (group "Visitors") ;One of "Faculty" "Research Scientists" "Visitors" 
-                         ;       "Students" "Alumni" "Former Members"
+                         ;       "Post Docs" "Students" "Alumni" "Former Members"
       (picture "static-perdos/pic.jpg")
       (homepage "http://www.ccs.neu.edu/home/perdos/")
-      (bio "I can be trusted")))
+      (bio "My Bacon-Erdos number is 4.")))
 
 
 === Publications ===
