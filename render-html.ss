@@ -23,23 +23,25 @@
       (head (title ,(string-append page-name 
                                    " - Programming Research Laboratory - Northeastern University"))
             (link ((rel "stylesheet") (type "text/css") (href "../static/prl.css"))))
-      (body (div ((class "sidebar"))
-                 (a ((href "home.html"))
-                    (img ((src "../static/prl.png"))))
-                 (ul ;links to other PRL pages
-                  ,@(map
-                     (lambda (page-stuff)
-                       `(li (a ((href ,(car (filenames page-stuff)))
-                                (class ,(if (string=? (car page-stuff) page-name)
-                                            "internal-self-link"
-                                            "internal-link")))
-                               ,(car page-stuff))))
-                     toplevel-files)))
-            (div ((class "mainstream")) 
-                 ,@(if (string=? "Home" page-name) '() (list `(h1 ,page-name)))
-                 ,sxml)
-            (div ((class "footer"))
-                 "Built with " (a ((href "http://www.plt-scheme.org")) "PLT Scheme")))))
+      (body 
+       (a ((name "top")) "")
+       (div ((class "sidebar"))
+            (a ((href "home.html"))
+               (img ((src "../static/prl.png"))))
+            (ul ;links to other PRL pages
+             ,@(map
+                (lambda (page-stuff)
+                  `(li (a ((href ,(car (filenames page-stuff)))
+                           (class ,(if (string=? (car page-stuff) page-name)
+                                       "internal-self-link"
+                                       "internal-link")))
+                          ,(car page-stuff))))
+                toplevel-files)))
+       (div ((class "mainstream")) 
+            ,@(if (string=? "Home" page-name) '() (list `(h1 ,page-name)))
+            ,sxml)
+       (div ((class "footer"))
+            "Built with " (a ((href "http://www.racket-lang.org")) "Racket")))))
     
 
   ; String[file name] -> Void

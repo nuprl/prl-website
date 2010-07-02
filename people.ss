@@ -19,7 +19,7 @@
                    [(list 'person person-name assoc ...)
                     (string=? (cadr (assq 'group assoc)) group-name)])) ; in the given group?
           people)))
-    '("Faculty" "Research Scientists" "Visitors" "Students" "Alumni" "Former Members")))
+    '("Faculty" "Research Scientists" "Post-Docs" "Visitors" "Students" "Alumni" "Former Members")))
 
  (for-each
   (lambda (person)

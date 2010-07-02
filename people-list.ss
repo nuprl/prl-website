@@ -45,7 +45,7 @@
 
  (define page 
    `(div
-     (div ((style "text-align:right;"))
+     (div ((style "text-align:center;"))
           (a ((href "photos.html")) "Photo gallery"))
      ,people-list))
 )

@@ -1,6 +1,7 @@
 body {
     font-family: Verdana, Helvetica, sans-serif;
     background-color: #E0E0E0;
+    margin: 30px;
 }
 .sidebar {
     float: right;
@@ -93,7 +94,14 @@ p {
    margin-top: 0.9x;
 }
 
-.published-in{
-   font-size: 75%;
-   margin-left: 5em;
+.published-in {
+   font-style: italic;
+   font-size: 90%;
+   margin-left: 2em;
+}
+
+.top-link {
+   font-size: 50%;
+   font-weight: normal;
+   margin-left: 0.2em;
 }
