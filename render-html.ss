@@ -66,7 +66,8 @@
             (lambda (alternative)
               (fprintf out
                        "Redirect ~a ~a ~%"
-                       alternative (car (filenames page-stuff))))
+                       alternative (string-append "http://www.ccs.neu.edu/research/prl/"
+                                                  (car (filenames page-stuff)))))
             (cdr (filenames page-stuff))))
          all-files))))
                      
