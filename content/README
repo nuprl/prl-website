@@ -7,11 +7,12 @@ from ~/.prl (and remove yourself from the centralized directories)
 
 The contents of this directory
   usernames             # edit this to add your username
-  centralized-people/   # move your bio to ~/.prl/bio.ss
-  centralized-pubs/     # if possible, move infomation to ~/.prl/pubs.{bib,ss}
-  centralized-pics/     # move your picture into ~/.prl/static/
-                        #   and update bio.ss with the new relative URL
-  README                # <-- you are here
+  centralized-people/   # move your bio to '~/.prl/bio.ss'
+  centralized-pubs/     # if possible, move infomation to '~/.prl/pubs.{bib,ss}'
+  centralized-pics/     # move your picture into '~/.prl/static/'
+                        #   and update bio.ss to say that your picture is in
+                        #   'static-<username>/' 
+  README                # <= you are here
 
 The contents of your ~/.prl/ directory:
   bio.ss                # personal profile
@@ -24,19 +25,19 @@ The contents of your ~/.prl/ directory:
 
 Add your username to the 'usernames' file in this directory.  
 
-Create a .prl/ directory in your home directory.
+Create a '.prl/' directory in your home directory.
 
-If your information is still in centralized-*/ from the previous version of the
-website, you'll want to remove it from there.  centralized-people/ has one file
-per person, but centralized-pubs/ is more complicated; group files like plt.ss
-should stay there, but a file that has just your work in it should be moved to
-~/.prl/pubs.ss or ~/.prl/pubs.bib
+If your information is still in 'centralized-*/' from the previous version of
+the website, you'll want to remove it from there.  'centralized-people/' has one
+file per person, but centralized-pubs/ is more complicated; group files like
+plt.ss should stay there, but a file that has just your work in it should be
+moved to '~/.prl/pubs.ss' or '~/.prl/pubs.bib'
 
 
 === Bio and picture  ===
 
 If you already have information up on the PRL website, there should be a file
-named after you in the people/ directory.  Copy that to ~/.prl/, and rename it
+named after you in the people/ directory.  Copy that to '~/.prl/', and rename it
 to 'bio.ss'.
 
 Otherwise, create a new "bio.ss" file.  An example follows:
@@ -49,7 +50,6 @@ Otherwise, create a new "bio.ss" file.  An example follows:
       (picture "static-perdos/pic.jpg")
       (homepage "http://www.ccs.neu.edu/home/perdos/")
       (bio "My Bacon-Erdos number is 4.")))
-
 
 === Publications ===
 
@@ -100,6 +100,6 @@ representation of XML).  So, to represent the following fragment of XHTML:
 
 Also, if you have files you want to host (probably your picture and copies of
 papers), you can put them in a .prl/static directory.  You can refer to them
-with the relative URL "static-<username>/<filename>".  Note that old files don't
+with the relative URL 'static-<username>/<filename>'.  Note that old files don't
 get deleted automatically if their source is deleted (you can overwrite them
 with an empty file if you want, though).
