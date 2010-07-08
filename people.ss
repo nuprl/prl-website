@@ -3,10 +3,10 @@
 
  (define people
    (map (lambda (filename)
-          (dynamic-require (string-append "content/people/" filename) 'me))
+          (dynamic-require (string-append "working/people/" filename) 'me))
         (filter 
          (lambda (filename) (regexp-match "[.]ss$" filename)) ;only files ending in .ss
-         (map path->string (directory-list "content/people")))))
+         (map path->string (directory-list "working/people/")))))
 
 
  (define grouped-people
