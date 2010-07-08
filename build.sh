@@ -55,4 +55,6 @@ echo " -- generating HTML -- "
 mzscheme render-html.ss 2> errorlog
 error_check
 
+cp -r static output/
+
 echo " -- done -- "

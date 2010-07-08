@@ -22,12 +22,12 @@
     `(html
       (head (title ,(string-append page-name 
                                    " - Programming Research Laboratory - Northeastern University"))
-            (link ((rel "stylesheet") (type "text/css") (href "../static/prl.css"))))
+            (link ((rel "stylesheet") (type "text/css") (href "static/prl.css"))))
       (body 
        (a ((name "top")) "")
        (div ((class "sidebar"))
             (a ((href "home.html"))
-               (img ((src "../static/prl.png"))))
+               (img ((src "static/prl.png"))))
             (ul ;links to other PRL pages
              ,@(map
                 (lambda (page-stuff)
@@ -60,9 +60,8 @@
   (define (produce-redirects)
     (call-with-output-file "output/.htaccess" #:exists 'replace
       (lambda (out)
-        (fprintf out "DirectoryIndex index.html")
-        (fprintf out "Disallow .htaccess")
-        (fprintf out "Disallow generator/")
+        (fprintf out "IndexIgnore */*~%")
+        (fprintf out "DirectoryIndex home.html~%")
         (for-each
          (lambda (page-stuff)
            (for-each 
