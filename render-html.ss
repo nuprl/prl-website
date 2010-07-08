@@ -60,6 +60,9 @@
   (define (produce-redirects)
     (call-with-output-file "output/.htaccess" #:exists 'replace
       (lambda (out)
+        (fprintf out "DirectoryIndex index.html")
+        (fprintf out "Disallow .htaccess")
+        (fprintf out "Disallow generator/")
         (for-each
          (lambda (page-stuff)
            (for-each 
