@@ -5,6 +5,22 @@ MAINTAINER=pauls@ccs.neu.edu
 function error_check() {
     if [ $? != 0 ] ; then 
         mail -s "PRL website generation error" $MAINTAINER < errorlog
+
+        RECIPIENT=`./error_blamer.pl errorlog`;
+        BACKTRACE=`cat errorlog`;
+
+        if [ "$RECIPIENT" != "" ] ; then
+            mail -s "PRL website generation error" $RECIPIENT <<EOF
+[this message is automatically generated]
+
+The most recent attempt to regenerate the PRL website errored out, and it
+appears that you're responsible.  If you're not, or you don't know what to do to
+fix it, please email $MAINTAINER.
+
+$BACKTRACE
+EOF
+        fi
+
         echo " -- [[[error]]] -- "
         cat errorlog
         echo " -- -- -- -- -- -- "
