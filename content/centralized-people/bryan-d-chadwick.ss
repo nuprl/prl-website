@@ -1,2 +1,0 @@
-#lang scheme
-(provide me)(define me (quote (person "Bryan D. Chadwick" (group "Students") (picture "gallery/Bryan_Chadwick.jpg") (homepage "http://www.ccs.neu.edu/home/chadwick/") (bio " I received my Masters from Northeastern in 2005 and continued on, joining PRL later that year under Karl Lieberherr. I'm interested in most things PL, but am currently looking at merging various ideas from functional programming with those of Object Oriented data structure traversals. "))))
