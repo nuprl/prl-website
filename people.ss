@@ -1,12 +1,26 @@
 (module people scheme
  (provide people grouped-people)
 
+
+ (define (give-default-sort-name person)
+   (cond 
+    [(assoc 'sort-name (cddr person))  person]
+    [else
+     (append person
+             `((sort-name ,(car (regexp-match* #rx" ([^ ]+) *$" (cadr person))))))]))
+
+
  (define people
-   (map (lambda (filename)
-          (dynamic-require (string-append "working/people/" filename) 'me))
-        (filter 
-         (lambda (filename) (regexp-match "[.]ss$" filename)) ;only files ending in .ss
-         (map path->string (directory-list "working/people/")))))
+   (sort
+    (map (lambda (filename)
+           (give-default-sort-name
+            (dynamic-require (string-append "working/people/" filename) 'me)))
+         (filter 
+          (lambda (filename) (regexp-match "[.]ss$" filename)) ;only files ending in .ss
+          (map path->string (directory-list "working/people/"))))
+    (lambda (p1 p2)
+      (string<? (cadr (assoc 'sort-name (cddr p1)))
+                (cadr (assoc 'sort-name (cddr p2)))))))
 
 
  (define grouped-people
