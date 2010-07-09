@@ -41,6 +41,7 @@ named after you in the people/ directory.  Copy that to '~/.prl/', and rename it
 to 'bio.ss'.
 
 Otherwise, create a new "bio.ss" file.  An example follows:
+
  #lang scheme
  (provide me)
  (define me
@@ -55,6 +56,7 @@ Otherwise, create a new "bio.ss" file.  An example follows:
 
 For your publications you'll want either a BibTex file called pubs.bib, or a
 Scheme file called pubs.ss:
+
  #lang scheme
  (provide bib)
  (define bib
