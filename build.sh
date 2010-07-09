@@ -34,10 +34,10 @@ EOF
 
 mkdir -p output
 
-rm -r working/
+rm -r working/*
 mkdir -p working/people
 mkdir -p working/pubs
-chmod -R a+w working/
+chmod -R a+w working/*
 
 echo " -- gathering information from .prl directories -- "
 for u in `cat content/usernames`; do
