@@ -13,6 +13,8 @@ function error_check() {
 }
 
 mkdir -p output
+
+rm -r working/
 mkdir -p working/people
 mkdir -p working/pubs
 
