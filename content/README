@@ -5,7 +5,7 @@ but I recommend that you add yourself to 'usernames' and manage your information
 from ~/.prl (and remove yourself from the centralized directories)
 
 
-The contents of this directory
+The contents of this directory:
   usernames             # edit this to add your username
   centralized-people/   # move your bio to '~/.prl/bio.ss'
   centralized-pubs/     # if possible, move infomation to '~/.prl/pubs.{bib,ss}'
@@ -14,7 +14,7 @@ The contents of this directory
                         #   'static-<username>/' 
   README                # <= you are here
 
-The contents of your ~/.prl/ directory:
+The contents of your '~/.prl/' directory:
   bio.ss                # personal profile
   pubs.{bib,ss}         # publications (BibTeX or Scheme)
   static/               # files to host under 'static-<username>/'
