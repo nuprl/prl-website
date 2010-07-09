@@ -121,7 +121,7 @@
                   (lambda (fields)
                     `(div 
                       ,(maybe-item fields 'anchor (lambda (x) `(a ((name ,x)) " ")))
-                      (h4 ((class "paper-title")) ,(cadr (assoc 'title fields))
+                      (h4 ((class "paper-title")) ,@(cdr (assoc 'title fields))
                           ,@(map (lambda (link-item)  
                                    (let* ((link ;BibTeX likes to add linebreaks:
                                            (regexp-replace "\n" (cadr (assoc 'link (cadr link-item))) ""))
