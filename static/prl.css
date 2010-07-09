@@ -105,3 +105,8 @@ p {
    font-weight: normal;
    margin-left: 0.2em;
 }
+
+/* if the scrollbar appears and disappears, it bounces 
+   the sidebar back and forth; so always show it */
+
+html { overflow-y: scroll; }
