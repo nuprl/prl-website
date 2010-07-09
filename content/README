@@ -86,14 +86,14 @@ representation of XML).  So, to represent the following fragment of XHTML:
 
  <div>
   The <em>quick</em> <a href="http://en.wikipedia.org/wiki/Brown">brown</a>
-  fox jumped  <hr class="over" style="width: 50%"/>  the lazy dog.
+  fox jumped <hr class="over" style="width: 50%"/> the lazy dog&reg;.
  </div>
 
 ...you would write:
 
- (div
-  "The " (em "quick") " " (a ((href "http://en.wikipedia.org/wiki/Brown") "brown"))
-  " fox jumped " (hr ((class "over") (style "width: 50%"))) " the lazy dog.")
+ '(div
+   "The " (em "quick") " " (a ((href "http://en.wikipedia.org/wiki/Brown") "brown"))
+   " fox jumped " (hr ((class "over") (style "width: 50%"))) " the lazy dog" reg ".")
 
 
 === Hosting static files ===
