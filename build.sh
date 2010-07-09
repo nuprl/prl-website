@@ -32,6 +32,16 @@ EOF
     fi
 }
 
+function on_exit() {
+    chmod -R a+wr output/static*
+    chmod -R a+wr output/*.html
+    chmod -R a+w working/*
+    echo " -- finished -- "
+}
+
+trap on_exit EXIT
+
+
 mkdir -p output
 
 rm -r working/*
@@ -79,9 +89,6 @@ mzscheme render-html.ss 2> errorlog
 error_check
 
 cp -r static output/
-chmod -R a+r output/static-*
 
-
-chmod -R a+w working/*
 
 echo " -- done -- "
