@@ -37,7 +37,7 @@ mkdir -p output
 rm -r working/*
 mkdir -p working/people
 mkdir -p working/pubs
-chmod -R a+w working/*
+
 
 echo " -- gathering information from .prl directories -- "
 for u in `cat content/usernames`; do
@@ -80,5 +80,8 @@ error_check
 
 cp -r static output/
 chmod -R a+r output/static-*
+
+
+chmod -R a+w working/*
 
 echo " -- done -- "
