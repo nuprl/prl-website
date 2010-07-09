@@ -4,10 +4,14 @@ MAINTAINER=pauls@ccs.neu.edu
 
 function error_check() {
     if [ $? != 0 ] ; then 
-        mail -s "PRL website generation error" $MAINTAINER < errorlog
-
         RECIPIENT=`./error_blamer.pl errorlog`;
         BACKTRACE=`cat errorlog`;
+
+        mail -s "PRL website generation error" $MAINTAINER <<EOF
+Also mailed (if anyone): $RECIPIENT
+
+$BACKTRACE
+EOF
 
         if [ "$RECIPIENT" != "" ] ; then
             mail -s "PRL website generation error" $RECIPIENT <<EOF
