@@ -42,14 +42,13 @@
             ,sxml)
        (div ((class "footer"))
             "Built with " (a ((href "http://www.racket-lang.org")) "Racket")))))
-    
+
 
   ; String[file name] -> Void
   ; effect: create or overwrite file.html with page
   (define (produce-page page-stuff)
     (let ((title (car page-stuff))
           (sxml-source (string-append (cadr page-stuff))))
-      (printf "generating \"~a\"~n" title)
       
       (let ((sxml (apply-general-style (dynamic-require sxml-source 'page) title))
             (file.html (open-output-file (string-append "output/" (car (filenames page-stuff)))

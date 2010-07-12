@@ -36,7 +36,7 @@ function on_exit() {
     chmod -R a+wr output/static*
     chmod -R a+wr output/*.html
     chmod -R a+w working/*
-    echo " -- finished -- "
+    
 }
 
 trap on_exit EXIT
@@ -49,7 +49,7 @@ mkdir -p working/people
 mkdir -p working/pubs
 
 
-echo " -- gathering information from .prl directories -- "
+# gather information from .prl directories
 for u in `cat content/usernames`; do
     if [ -e /home/$u/.prl/bio.ss ] ; then   cp /home/$u/.prl/bio.ss     working/people/$u.bio.ss ; fi
     if [ -e /home/$u/.prl/pubs.ss ] ; then  cp /home/$u/.prl/pubs.ss    working/pubs/$u.pubs.ss  ; fi
@@ -68,7 +68,7 @@ cat working/pubs/*.bib > working/pubs/allpubs.bib
 cp allpubs.aux working/pubs/
 cp sxml.bst working/pubs/
 
-echo " -- building publication information -- "
+# building publication information
 cd working/pubs/
 mzscheme ../../xml-to-sxml.ss *.xml 2> errorlog
 error_check
@@ -78,12 +78,12 @@ error_check
 
 mv allpubs.bbl bibtexpubs.withbackslashes
 
-#the backslashes get us into trouble otherwise
+#(the backslashes get us into trouble otherwise)
 detex bibtexpubs.withbackslashes > bibtexpubs.ss
 
 cd ../../
 
-echo " -- generating HTML -- "
+# generating HTML
 
 mzscheme render-html.ss 2> errorlog
 error_check
@@ -91,4 +91,3 @@ error_check
 cp -r static output/
 
 
-echo " -- done -- "
