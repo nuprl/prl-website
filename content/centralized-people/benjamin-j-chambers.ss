@@ -1,2 +1,0 @@
-#lang scheme
-(provide me)(define me (quote (person "Benjamin J. Chambers" (group "Students") (picture "gallery/Ben_Chambers.jpg") (bio " I am a first-year PhD student interested especially in functional languages and program analyses, but at this point I'm pretty much open to anything in PL. I did my undergraduate at Georgia Tech, where I discovered my interest in PL after taking a course in compilers. In my free time I enjoy reading books and am trying to learn to play Jazz piano (although I'm afraid I don't actually have enough free time to do that). "))))
