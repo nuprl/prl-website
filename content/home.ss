@@ -13,27 +13,22 @@
 computer science, and that programming languages are therefore our
 fundamental tool.")
      (p "We seek a deeper understanding of this fundamental tool and how it
-should be used, and we seek to apply this understanding to novel
-applications, to improving the programming and design process, and to
-improving computer science education.")
+should be used, and we seek to apply this understanding to the program design
+process, as well as to novel applications.")
      (p "We take a multi-faceted approach to the study of programming
 languages and programming methodology, incorporating elements of design,
-mathematics, experimental science, engineering, and education.")
+mathematics, experimental science, and engineering.")
 
 
      (p "We conduct research on all aspects of programming, including"
         (ul
          (li "the development of small and large programs")
          (li "the design, implementation, and analysis of programming languages")
-         (li "programming environment tools")
-         (li "the pedagogy of programming")))
+         (li "programming environment tools")))
 
-     (p "Our research program is deeply integrated with its undergraduate
-teaching mission. We also participate in the widely visible
-TeachScheme!  outreach project.")
-
-     (p "Our research program is also deeply integrated with our graduate
-teaching mission.  We aim to provide an environment that is both
-nurturing and challenging in order to give our PhD students the best
-possible scientific education.")))
+     (p "Our research program is intertwined with our mission to train
+undergraduates and graduate students. We routinely exploit research results for
+our undergraduate courses, and we routinely find research challenges in our
+teaching. Some of the faculty and PhD students assist the TeachScheme! project,
+including Bootstrap, its middle school program.")))
 )
