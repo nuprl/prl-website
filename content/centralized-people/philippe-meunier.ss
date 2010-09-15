@@ -1,3 +1,5 @@
 #lang scheme
-(provide me)(define me (quote (person "Philippe Meunier" (group "Alumni") (picture "gallery/meunier.jpg")
+(provide me)
+(define me (quote (person "Philippe Meunier" (graduated
+2006) (group "Alumni") (picture "gallery/meunier.jpg")
 (homepage "http://ict.siit.tu.ac.th/~meunier/") (thesis "http://www.ccs.neu.edu/scheme/pubs/dissertation-meunier.pdf") (bio " I spend most of my time in a faraway office chasing geckos with a butterfly net. I also occasionaly entertain myself by chasing students. Most of the students are too big for my butterfly net though, so I have to use a red pen instead, which is much harder. Fortunately the students do not move as fast as the geckos. All my other activities are classified, but I'll still tell you if you ask me nicely because I really love you. I used to have a rubber ducky named Bernard but it was impounded by a jealous Customs official."))))
