@@ -155,7 +155,7 @@ FUNCTION {maybe.write.pubf.herexexpr} { duplicate$ empty$ 'poptwice 'write.pubf.
 
 FUNCTION {output.bibitem.fields} 
 {
-  "   (published-via-bibtex " write$ "(" write$
+  "   (published-via-bibtex " write$
         "entrytype "  type$ maybe.write.pubf 
         "address "    address        maybe.write.pubf
         "booktitle "  booktitle      maybe.write.pubf
@@ -173,7 +173,7 @@ FUNCTION {output.bibitem.fields}
         "series " series       maybe.write.pubf
         "volume " volume       maybe.write.pubf
         "abstract " abstract       maybe.write.pubf.herexexpr
-      "))" write$ newline$
+      ")" write$ newline$
 
 }
 

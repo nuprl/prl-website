@@ -94,10 +94,14 @@ p {
    margin-top: 0.9x;
 }
 
+.pub-info {
+   margin-left: 2em;
+   font-size: 90%;
+}
+
 .published-in {
    font-style: italic;
    font-size: 90%;
-   margin-left: 2em;
 }
 
 .top-link {
