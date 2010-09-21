@@ -2,6 +2,13 @@
 
 MAINTAINER=pauls@ccs.neu.edu
 
+if [ `whoami` != 'pauls' ] ; then
+	echo "You probably shouldn't run this if you're not Paul."
+	echo "(I haven't thought through the consequences of other"
+	echo "people owning generated files in output/ and working/)"
+	exit 1
+fi
+
 function error_check() {
     if [ $? != 0 ] ; then 
         RECIPIENT=`./error_blamer.pl errorlog`;

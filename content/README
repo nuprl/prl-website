@@ -4,6 +4,7 @@ file.  I moved all the website's old content into these centralized directories,
 but I recommend that you add yourself to 'usernames' and manage your information
 from ~/.prl (and remove yourself from the centralized directories)
 
+The website is regenerated every night at 2am.
 
 The contents of this directory:
   usernames             # edit this to add your username
