@@ -43,7 +43,6 @@ function on_exit() {
     chmod -R a+wr output/static*
     chmod -R a+wr output/*.html
     chmod -R a+w working/*
-    
 }
 
 trap on_exit EXIT

@@ -81,25 +81,45 @@
  (define (maybe-list fields sym drop-in) ;for when the fields have ('sym item item item ...)
    (if (assoc sym fields)
        (drop-in (cdr (assoc sym fields)))
-       '(span)))
+       ""))
 
  (define (maybe-item fields sym drop-in) ;for when the fields have ('sym item)
    (maybe-list fields sym (lambda (x) (drop-in (car x)))))
    
  (define (published-line published-expr)
    ;idiosyncratic formats
-   `(span ((class "published-in"))
+   `(span ((class "pub-info"))
      ,(match published-expr
         [(list (list (list 'in place)
                      more-info ...))
-         `(span "in " ,(venue-rename place)
+         `(span  (span ((class "published-in")) ,(venue-rename place))
                 ,(maybe-item more-info 'issue (lambda (x) `(span " (" ,x ") ")))
                 ,(maybe-item more-info 'pages (lambda (x) `(span " pp. " ,x))))]
         [(list (list) desc)
-         (venue-rename desc)]
+         `(span ((class "published-in")) ,(venue-rename desc))]
         [(list desc)
-         (venue-rename desc)])))
-      
+         `(span ((class "published-in")) ,(venue-rename desc))])))
+
+ (define (bibtex-published-line bibtex-fields)
+   `(span ((class "pub-info"))
+     ,(let ((type (cadr (assoc 'entrytype bibtex-fields))))
+        (cond
+         [(equal? type "techreport")  "(tech report)"]
+         [(equal? type "phdthesis")   "(PhD. thesis)"]
+         [(equal? type "unpublished") "(unpublished)"]
+         [(equal? type "proceedings") "(proceedings)"]
+         [(equal? type "book")        "(book)"] ; darn
+         [else "" ])) ;normal article (inproceedings, article)
+     ,(maybe-item bibtex-fields 'organization (lambda (x) `(span " " ,x)))
+     ,(maybe-item bibtex-fields 'institution (lambda (x) `(span " " ,x)))
+     ,(maybe-item bibtex-fields 'school (lambda (x) `(span " at " ,x)))
+     ,(maybe-item bibtex-fields 'booktitle (lambda (x) `(span ((class "published-in")) " " ,x)))
+     ,(maybe-item bibtex-fields 'journal (lambda (x) `(span ((class "published-in")) " " ,x )))
+     ,(maybe-item bibtex-fields 'number (lambda (x) `(span " no. " ,x)))
+     ,(maybe-item bibtex-fields 'volume (lambda (x) `(span " vol. " ,x)))
+     ,(maybe-item bibtex-fields 'pages (lambda (x) `(span " pp. " ,x)))))
+
+
 
  (define (pubs-date-page pubs)
    (match pubs
@@ -140,7 +160,8 @@
                                                      ,format) "]")))
                                  (filter (lambda (field) (symbol=? 'download (car field))) fields)))
                       (span ((class "pub-authors")) ,@(cadr (assoc 'authors fields))) (br)
-                      ,(maybe-list fields 'published published-line)))
+                      ,(maybe-list fields 'published published-line)
+                      ,(maybe-list fields 'published-via-bibtex bibtex-published-line)))
                   fields)))
            year fields))]))
 

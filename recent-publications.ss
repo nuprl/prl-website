@@ -19,6 +19,6 @@
            )
      ,(pubs-date-page recent-pubs)
      (br)
-     (a ((href "all_publications.html"))
-        "All publications (1971" ndash ")")))
+     (a ((href "all_publications.html#year2000"))
+        "older publications")))
 )
