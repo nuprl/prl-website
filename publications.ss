@@ -98,7 +98,9 @@
         [(list (list) desc)
          `(span ((class "published-in")) ,(venue-rename desc))]
         [(list desc)
-         `(span ((class "published-in")) ,(venue-rename desc))])))
+         `(span ((class "published-in")) ,(venue-rename desc))]
+        [(list desc ...)
+         `(span ((class "published-in")) ,@desc)])))
 
  (define (bibtex-published-line bibtex-fields)
    `(span ((class "pub-info"))
