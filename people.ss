@@ -16,7 +16,7 @@
            (give-default-sort-name
             (dynamic-require (string-append "working/people/" filename) 'me)))
          (filter 
-          (lambda (filename) (regexp-match "[.]ss$" filename)) ;only files ending in .ss
+          (lambda (filename) (regexp-match "[.]ss$|[.]rkt$" filename)) ; Racket files
           (map path->string (directory-list "working/people/"))))
     (lambda (p1 p2)
       (string<? (cadr (assoc 'sort-name (cddr p1)))

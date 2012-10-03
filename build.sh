@@ -57,10 +57,13 @@ mkdir -p working/pubs
 
 # gather information from .prl directories
 for u in `cat content/usernames`; do
-    if [ -e /home/$u/.prl/bio.ss ] ; then   cp /home/$u/.prl/bio.ss     working/people/$u.bio.ss ; fi
-    if [ -e /home/$u/.prl/pubs.ss ] ; then  cp /home/$u/.prl/pubs.ss    working/pubs/$u.pubs.ss  ; fi
-    if [ -e /home/$u/.prl/pubs.bib ] ; then cp /home/$u/.prl/pubs.bib   working/pubs/$u.pubs.bib ; fi
-    if [ -d /home/$u/.prl/static ] ; then   cp -r /home/$u/.prl/static  output/static-$u         ; fi
+    if [ -e /home/$u/.prl/bio.ss ] ; then   cp /home/$u/.prl/bio.ss      working/people/$u.bio.ss ; fi
+    if [ -e /home/$u/.prl/pubs.ss ] ; then  cp /home/$u/.prl/pubs.ss     working/pubs/$u.pubs.ss  ; fi
+    if [ -e /home/$u/.prl/pubs.bib ] ; then cp /home/$u/.prl/pubs.bib    working/pubs/$u.pubs.bib ; fi
+    if [ -e /home/$u/.prl/bio.rkt ] ; then  cp /home/$u/.prl/bio.rkt     working/people/$u.bio.rkt ; fi
+    if [ -e /home/$u/.prl/pubs.rkt ] ; then cp /home/$u/.prl/pubs.rkt    working/pubs/$u.pubs.rkt  ; fi
+    mkdir -p output/static-$u/
+    if [ -d /home/$u/.prl/static ] ; then   cp -r /home/$u/.prl/static/* output/static-$u/        ; fi
 done
 
 cp content/centralized-people/* working/people/

@@ -34,7 +34,7 @@
                (map (lambda (filename)
                       (dynamic-require (string-append "working/pubs/" filename) 'bib))
                     (filter 
-                     (lambda (filename) (regexp-match "[.]ss$" filename)) ;only files ending in .ss
+                     (lambda (filename) (regexp-match "[.]ss$|[.]rkt$" filename)) ; Racket files
                      (map path->string (directory-list "working/pubs/")))))))
 
  (define venue-renamers (dynamic-require "venue-rename.ss" 'venues))
