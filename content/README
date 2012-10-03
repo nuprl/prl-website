@@ -1,3 +1,5 @@
+This file is located at /home/www/ccis/research/prl/generator/content/README
+
 The PRL website slurps data from two sources: the centralized data directories
 here, and the .prl/ directory in the home directory of anyone in the 'usernames'
 file.  I moved all the website's old content into these centralized directories,
@@ -52,6 +54,8 @@ Otherwise, create a new "bio.ss" file.  An example follows:
       (picture "static-perdos/pic.jpg")
       (homepage "http://www.ccs.neu.edu/home/perdos/")
       (bio "My Bacon-Erdos number is 4.")))
+
+Pictures are resized in-browser to 150px wide, so it's best just to choose a photo that size. (See the last section for information on hosting static files, like pictures.)
 
 === Publications ===
 
