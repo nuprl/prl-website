@@ -26,7 +26,7 @@
                      "an irregular meeting of researchers in aspect-oriented software development")
            ,(seminar "junior PL seminar"
                      "pl-sem-jr"
-                     "http://www.ccs.neu.edu/home/turon/pljr.html"
+                     "http://www.ccs.neu.edu/home/stamourv/pljr.html"
                      "a regular student-only seminar, suitable for those new to the study of programming languages"))))
 )
 
