@@ -41,7 +41,7 @@
 (define Antoniu   "Tudor Antoniu")
 (define Steckler  "Paul A. Steckler")
 (define Neuwirth  "Erich Neuwirth")
-(define Meunier   "Phillippe Meunier")
+(define Meunier   "Philippe Meunier")
 (define Graunke   "Paul Graunke")
 (define Logan     "Mark Logan")
 (define Blank-Edelman "David Blank-Edelman")
@@ -173,12 +173,13 @@
  (download ((format "PDF") ,(plt-link "gpce05-cof.pdf")))
  (published "GPCE"))
 
-(publication
- (authors ,Meunier , Findler , Steckler , Wand)
- (title "Selectors Make Set-Based Analysis Too Hard")
- (date ((year 2005)))
- (download ((format "PDF") ,(plt-link "hosc05-mfsw.pdf")))
- (published "Journal of Higher-Order and Symbolic Computing"))
+; Already in wand-pubs.bib
+;(publication
+; (authors ,Meunier , Findler , Steckler , Wand)
+; (title "Selectors Make Set-Based Analysis Too Hard")
+; (date ((year 2005)))
+; (download ((format "PDF") ,(plt-link "hosc05-mfsw.pdf")))
+; (published "Journal of Higher-Order and Symbolic Computing"))
 
 (publication
  (authors , Cobbe , Felleisen)
@@ -334,14 +335,15 @@ Programming Language Design and Implementation: 1979 - 1999. A Selection.")
  (title " Automatically Restructuring Programs for the Web ")
  (download ((format "PS") ,(plt-link "ase2001-gfkf.ps.gz")))
  (download ((format "PDF") ,(plt-link "ase2001-gfkf.pdf"))))
-(publication
- (anchor "scmfun01-mfsw")
- (date ((year 2001) (month "September")))
- (published "Scheme and Functional Programming 2001 ")
- (authors , Meunier, Findler, Steckler " and " ,Wand )
- (title (span " Selectors Make Analysis of " (tt () " case-lambda ") " Too Hard "))
- (download ((format "DVI") ,(plt-link "scmfun01-mfsw.dvi.gz")))
- (download ((format "PS") ,(plt-link "scmfun01-mfsw.ps.gz"))))
+; Already in wand-pubs.bib
+;(publication
+; (anchor "scmfun01-mfsw")
+; (date ((year 2001) (month "September")))
+; (published "Scheme and Functional Programming 2001 ")
+; (authors , Meunier, Findler, Steckler " and " ,Wand )
+; (title (span " Selectors Make Analyzing " (tt () " case-lambda ") " Too Hard "))
+; (download ((format "DVI") ,(plt-link "scmfun01-mfsw.dvi.gz")))
+; (download ((format "PS") ,(plt-link "scmfun01-mfsw.ps.gz"))))
 (publication
 #|
 Proceedings of the 2001 ACM SIGPLAN Conference on Object-Oriented Programming Systems, Languages and Applications, OOPSLA 2001, October 14-18, 2001, Tampa, Florida, USA. SIGPLAN Notices 36(11), November 2001, ACM, ISBN 1-58113-355-9
