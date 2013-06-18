@@ -1,8 +1,9 @@
 #!/bin/bash
 
-MAINTAINER=pauls@ccs.neu.edu
+MAINTAINER=schuster
+MAINTAINER_EMAIL=${MAINTAINER}@ccs.neu.edu
 
-if [ `whoami` != 'pauls' ] ; then
+if [ `whoami` != $MAINTAINER ] ; then
 	echo "You probably shouldn't run this if you're not Paul."
 	echo "(I haven't thought through the consequences of other"
 	echo "people owning generated files in output/ and working/)"
@@ -14,7 +15,7 @@ function error_check() {
         RECIPIENT=`./error_blamer.pl errorlog`;
         BACKTRACE=`cat errorlog`;
 
-        mail -s "PRL website generation error" $MAINTAINER <<EOF
+        mail -s "PRL website generation error" $MAINTAINER_EMAIL <<EOF
 Also mailed (if anyone): $RECIPIENT
 
 $BACKTRACE
@@ -26,7 +27,7 @@ EOF
 
 The most recent attempt to regenerate the PRL website errored out, and it
 appears that you're responsible.  If you're not, or you don't know what to do to
-fix it, please email $MAINTAINER.
+fix it, please email $MAINTAINER_EMAIL.
 
 $BACKTRACE
 EOF
