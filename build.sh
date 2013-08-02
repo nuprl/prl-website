@@ -4,7 +4,7 @@ MAINTAINER=schuster
 MAINTAINER_EMAIL=${MAINTAINER}@ccs.neu.edu
 
 if [ `whoami` != $MAINTAINER ] ; then
-	echo "You probably shouldn't run this if you're not Paul."
+	echo "You probably shouldn't run this if you're not $MAINTAINER."
 	echo "(I haven't thought through the consequences of other"
 	echo "people owning generated files in output/ and working/)"
 	exit 1
