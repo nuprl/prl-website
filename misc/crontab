@@ -1,1 +1,1 @@
-0 4 * * * /home/www/ccis/research/prl/generator/cron-buid.sh
+0 4 * * * /home/www/ccis/research/prl/generator/cron-build.sh
