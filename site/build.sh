@@ -3,6 +3,9 @@
 MAINTAINER=schuster
 MAINTAINER_EMAIL=${MAINTAINER}@ccs.neu.edu
 
+# Temporary fix until the 64-bit Racket issue is fixed, or login is updated to be 64-bit
+PATH=/proj/racket/plt-released/5.3.4/bin:$PATH
+
 if [ `whoami` != $MAINTAINER ] ; then
 	echo "You probably shouldn't run this if you're not $MAINTAINER."
 	echo "(I haven't thought through the consequences of other"
