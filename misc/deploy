@@ -1,0 +1,3 @@
+#!/bin/sh
+
+rsync -vr ../site/ /home/www/ccis/research/prl/generator
