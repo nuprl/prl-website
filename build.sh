@@ -1,9 +1,13 @@
 #!/bin/bash
 
-MAINTAINER=pauls@ccs.neu.edu
+MAINTAINER=schuster
+MAINTAINER_EMAIL=${MAINTAINER}@ccs.neu.edu
 
-if [ `whoami` != 'pauls' ] ; then
-	echo "You probably shouldn't run this if you're not Paul."
+# Temporary fix until the 64-bit Racket issue is fixed, or login is updated to be 64-bit
+PATH=/proj/racket/plt-released/5.3.4/bin:$PATH
+
+if [ `whoami` != $MAINTAINER ] ; then
+	echo "You probably shouldn't run this if you're not $MAINTAINER."
 	echo "(I haven't thought through the consequences of other"
 	echo "people owning generated files in output/ and working/)"
 	exit 1
@@ -14,7 +18,7 @@ function error_check() {
         RECIPIENT=`./error_blamer.pl errorlog`;
         BACKTRACE=`cat errorlog`;
 
-        mail -s "PRL website generation error" $MAINTAINER <<EOF
+        mail -s "PRL website generation error" $MAINTAINER_EMAIL <<EOF
 Also mailed (if anyone): $RECIPIENT
 
 $BACKTRACE
@@ -26,7 +30,7 @@ EOF
 
 The most recent attempt to regenerate the PRL website errored out, and it
 appears that you're responsible.  If you're not, or you don't know what to do to
-fix it, please email $MAINTAINER.
+fix it, please email $MAINTAINER_EMAIL.
 
 $BACKTRACE
 EOF
