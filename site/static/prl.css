@@ -71,11 +71,6 @@ h2 {
     margin-bottom: 0.5ex;
 }
 
-h3 {
-    margin-top: 1ex;
-    margin-bottom: 0.5ex;
-}
-
 p {
     margin-top: 0.5ex;
     text-align: justify;
@@ -108,6 +103,16 @@ p {
    font-size: 50%;
    font-weight: normal;
    margin-left: 0.2em;
+}
+
+.mainstream table tbody tr {
+
+    vertical-align: top;
+}
+
+.mainstream table tbody tr td {
+    padding-bottom: 20px;
+    padding-right: 15px;
 }
 
 /* if the scrollbar appears and disappears, it bounces 
