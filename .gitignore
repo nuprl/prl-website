@@ -1,8 +1,8 @@
 *~
 \#*#
 .#*
-/output
-/errorlog
-/working/
+site/output
+site/errorlog
+site/working/
 *.bbl
 *.blg
