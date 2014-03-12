@@ -2,7 +2,7 @@
 (provide me)
 (define me 
   '(person "David Van Horn" 
-	   (group "Post-Docs") 
+	   (group "Former Members") 
 	   (homepage "http://www.ccs.neu.edu/home/dvanhorn/")
 	   (bio "I am a native Texan and CRA Computing Innovation Fellow, working with
 Matthias, Mitch, Olin, and the rest of the PRL.  I am interested in 
