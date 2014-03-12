@@ -73,7 +73,8 @@ done
 cp content/centralized-people/* working/people/
 cp content/centralized-pubs/* working/pubs/
 
-cp -r content/centralized-pics output/gallery
+mkdir -p output/gallery
+cp -r content/centralized-pics/* output/gallery
 
 if [ -e working/pubs/allpubs.bib ] ; then  rm working/pubs/allpubs.bib; fi
 cat working/pubs/*.bib > working/pubs/allpubs.bib
